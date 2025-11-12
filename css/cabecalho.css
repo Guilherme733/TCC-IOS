@@ -1,0 +1,122 @@
+:root {
+    --cor1: #734652; 
+    --cor2: #F22987; 
+    --cor3: #D9048E;
+    --cor4: #55B3D9;
+    --cor5: #85DEF2; 
+    --cor6: #BBF2F2;
+}
+.entradaa{
+    background-image: url(../img/cabecalho/veterinario-cuidando-de-cachorro-de-estimacao.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    width: 100%;
+    height: 100vh;
+}
+.entradab h1{
+    color: black;
+    size: 50px;
+}
+header{
+    background-color: #BBF2F2;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+}
+.entradab{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ancora ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap:25px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+ 
+}
+div .logoa{
+    height: 100px;
+    width: 100px;
+}
+.logob{
+    height: 80px;
+    width: 80px;
+}
+
+
+/* botão */
+.botaocabecalho{
+    background-color: #f2358dcb; 
+    color: #734652; 
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 15px 30px; 
+    display: inline-block; 
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+
+}
+.botaocabecalho:hover{
+    background-color: #D9048E; 
+    color: #F2F2F2; 
+}
+.dialogomain{
+    margin-top: 200px;
+
+}
+main {
+    display: flex;
+    flex-direction: column; 
+ 
+    align-items: center;
+ 
+}
+
+
+.dialogomain {
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+    max-width: 500px;
+    padding: 50px 70px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+
+.consulta button {
+    padding: 10px 30px;
+    font-size: 1.1em;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.consulta button:hover {
+    background-color: #e3529b;
+}

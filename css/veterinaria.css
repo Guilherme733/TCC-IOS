@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #C7EAFA;
+}
+p{
+    color: black;
+}
+:root {
+    --primary-color: #734652; /* Verde da identidade visual */
+    --secondary-color: #F22987; /* Roxo/Magenta para botões de ação (adaptado para um tom mais vibrante) */
+    --text-dark: #D9048E;
+    --text-light: #55B3D9;
+    --background-light: #85DEF2; /* Fundo esverdeado suave */
+    --footer-bg: #BBF2F2;
+}
