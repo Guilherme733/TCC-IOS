@@ -7,16 +7,10 @@
     --cor5: #85DEF2; 
     --cor6: #BBF2F2;
 }
-*
-
  .depoimentos {
-      background: #fff9fd;
+      background-color: #C7EAFA ;
       padding: 60px 40px;
       text-align: center;
-      background-image: url(../img/avaliacao/Background.png);
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: center;
     }
 
     .depoimentos h2 {

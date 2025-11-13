@@ -9,12 +9,6 @@
 
 /* Reset básico e tipografia */
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 /* --- ESTILOS GERAIS DE BOTÕES E LINKS --- */
 .button-primary, .button-secondary {
     display: inline-block;
@@ -151,8 +145,7 @@
 
 /* Botão principal de agendamento */
 #main-appointment-button {
-    width: 90%;
-    max-width: 400px;
+    width: 400px;
     padding: 15px 30px;
 }
 
@@ -173,7 +166,7 @@
 
 .footer-logo-address {
     flex: 2;
-    min-width: 250px;
+    width: 250px;
 }
 
 .footer-logo {
