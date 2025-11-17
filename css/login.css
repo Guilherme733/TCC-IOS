@@ -1,0 +1,132 @@
+body {
+    /* Fundo escuro similar ao da imagem */
+    background-color: #bd0b5b; 
+    color: #ffffff; /* Cor do texto branco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte próxima a usada pela Microsoft */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+img.oik {
+ width: 200px;
+ height: auto;
+
+}
+
+.login-container {
+    /* Dimensões da caixa de login */
+    width: 600px; 
+    padding: 25px;
+    background-color: #251e24; /* Cor do fundo da caixa */
+    box-shadow: 0 4px 10px rgba(3, 1, 3, 0.5); /* Sombra sutil */
+    border-radius: 4px;
+    text-align: center; /* Centraliza a logo e título */
+}
+
+/* Estilo da Logo */
+.logo img {
+    font-size: 40px;
+    font-weight: bold;
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    /* Para replicar a logo colorida, você usaria uma imagem de fundo ou SVG */
+    color: #0078d4; /* Exemplo de cor para texto */
+}
+
+.titulo {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* Campo de Entrada (Input) */
+.input-group {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
+    background-color: #2c2c2c; /* Fundo do input igual ao da caixa */
+    border: 1px solid #757575; /* Borda cinza */
+    color: #ffffff;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    /* Efeito de foco (borda azul no estilo Microsoft) */
+    border-color: #0078d4; 
+}
+
+/* Link de Recuperação */
+.link-recuperacao {
+    display: block;
+    text-align: left;
+    color: #0078d4; /* Cor azul de link */
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: color 0.2s;
+}
+
+.link-recuperacao:hover {
+    text-decoration: underline;
+}
+
+/* Botão Avançar */
+.botao-avancar {
+    width: 100%;
+    padding: 12px;
+    background-color: #00a1f1; /* Cor verde/azul forte para o botão */
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 25px;
+}
+
+.botao-avancar:hover {
+    background-color: #008cd4; 
+}
+
+/* Nova Conta */
+.nova-conta {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.link-criar {
+    color: #0078d4;
+    text-decoration: none;
+}
+
+.link-criar:hover {
+    text-decoration: underline;
+}
+
+.footer-login {
+    margin-top: 30px;
+}
+
+.icone-servico {
+    width: 80px; /* Ajuste o tamanho do seu ícone de serviço/Xbox */
+    opacity: 0.7;
+}
