@@ -26,8 +26,6 @@ p {
 
 header {
     width: 100%;
-    align-items: center;
-    justify-content: space-around;
 }
 
 .menu {
@@ -44,6 +42,7 @@ header {
     font-size: 1.5em;
     font-weight: bold;
 }
+
 
 .logoicone img {
     width: 70px;
@@ -68,15 +67,9 @@ a {
     padding: 0;
 }
 
-.ancora li {
-    list-style: none;
-}
-
 .ancora a {
     text-decoration: none;
-    gap: 15px;
-    color: black;
-    border: none
+    color: black ;
 }
 
 .login {
@@ -90,7 +83,6 @@ a {
     display: block;
 }
 
-
 div .logoa {
     height: 100px;
     width: 100px;
@@ -102,25 +94,21 @@ div .logoa {
 }
 
 .botaonav {
-    background-color: rgba(255, 77, 160, 0.849);
-    color: #734652;
+    background-color: var(--secondary-color); 
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
-    font-family: "Fugaz One", sans-serif;
     padding: 15px 30px;
     display: inline-block;
     cursor: pointer;
     border: none;
     transition: background-color 0.3s;
-    border-top-right-radius: 100px;
-    border-bottom-left-radius: 100px;
-    border-top-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border-radius: 100px; 
 }
 
 .botaonav:hover {
-    background-color: #55B3D9;
-    color: #F2F2F2;
+    
+    color: white;
 }
 
 /*                                              CONTEÚDO MAIN                                          */
@@ -128,36 +116,41 @@ div .logoa {
 main {
     background-image: url(../img/cabecalho/veterinario-cuidando-de-cachorro-de-estimacao.jpg);
     background-repeat: no-repeat;
-    background-size:cover ;
+    background-size: cover;
+    background-position: center center; /* Adicionado: Centraliza a imagem */
     height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 300px;
-
-
 }
 
 .dialogomain {
-    height: 200px;
+    height: 200px; 
     width: 600px;
-    background: transparent;
     background-color: rgba(0, 0, 0, 0.65);
     padding: 50px 70px;
     border-radius: 10px;
-    justify-content: center;
-
+    
+    font-size: 1.1em;
+    font-weight: 600;
 }
 
-.dialogomain img,
-h2,
-span,
-p,
-strong {
+.dialogomain h2,
+.dialogomain span,
+.dialogomain p,
+.dialogomain strong {
     background: transparent;
-    gap: 20px;
     color: white;
-    padding: 5px;
+    padding: 5px 0; 
+}
+.mainimg{
+    background: transparent;
+}
+.dialogomain img{
+    height: 150px;
+    width: 150px;
+    background: transparent;
 }
 
 .botaoconsulta,
@@ -168,133 +161,211 @@ a {
 .botaoconsulta button {
     height: 50px;
     width: 250px;
-    border-radius: 50px 50px 50px 50px;
-    background-color: #F22987;
+    border-radius: 50px;
+    background-color: #f22987;
     cursor: pointer;
+    border: solid;
+    border-color: #000000;
+    color: white; 
+    font-weight:50px ; 
     transition: background-color 0.3s;
+    size:50px;
 }
-
 .botaoconsulta button:hover {
     background-color: #55B3D9;
-    color: white;
+    color: black;
 }
 
 
 
 /*                         SERVIÇOS                          */
 
+
 #servicos {
-    padding: 60px 20px;
+    gap: 50px;
     text-align: center;
-    height: 700px;
-    align-content: center;
-
-
-
+    background:transparent;
 }
 
-.servicos {
-    display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    gap: 20px;
-    width: 900px;
-    padding: 20px;
-    text-align: center;
-}
-
-.cartao img,
-h3,
-p {
+#servicos h1 {
+    color: #00796b;
+    margin-bottom: 40px;
+    font-size: 2.5em;
     background: transparent;
-    color: black;
 }
 
-.cartao img {
-    height: 50px;
-    width: 50px;
-    background-color: transparent;
+
+
+.servicos-grid {
+    display: grid;
+ 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    max-width: 1000px;
+    margin: 0 auto; 
+    gap: 30px;
+    padding: 20px 0;
 }
+
+/* ========================================================= */
+/* ESTILO BASE DO CARD ROTATIVO (Flip Card) */
+/* ========================================================= */
 
 .cartao {
-    background: #55B3D9;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: transparent;
+    width: 100%; /* Ocupa a largura total da coluna do Grid */
+    height: 350px; 
+    perspective: 1000px; 
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
 }
 
-.cartao:hover {
-    transform: translateY(-5px);
+.cartao-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s; 
+    transform-style: preserve-3d;
+    border-radius: 15px;
+}
+
+/* Efeito de Rotação ao passar o mouse */
+.cartao:hover .cartao-interno {
+    transform: rotateY(180deg);
+}
+/* Se usar JS para clique, use a classe .is-flipped como mencionado anteriormente */
+
+/* Posição das faces */
+.cartao-frente, .cartao-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* ========================================================= */
+/* ESTILO ESPECÍFICO DA FRENTE */
+/* ========================================================= */
+
+.cartao-frente {
+    background-color: #ffffff; /* Fundo branco */
+    color: #333;
+    border: 3px solid #b2dfdb; /* Borda suave */
+    
+}
+
+.cartao-frente .icon-front {
+    font-size: 3em;
+    color: #ff9800; /* Laranja de destaque para os ícones */
+    margin-bottom: 15px;
+}
+
+.cartao-frente h3 {
+    font-size: 1.5em;
+    color: #00796b;
+    margin-bottom: 5px;
+    background: transparent;
+}
+
+.cartao-frente p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* ========================================================= */
+/* ESTILO ESPECÍFICO DO VERSO */
+/* ========================================================= */
+
+.cartao-verso {
+    background-color: #00796b; /* Fundo verde-água */
+    color: white;
+    transform: rotateY(180deg); 
+    padding: 40px 25px;
+    
+}
+
+.cartao-verso h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: white;
+    background: transparent;
+}
+
+.cartao-verso p {
+    font-size: 1em;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.btn-saibamais {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-saibamais:hover {
+    background-color: #fb8c00;
 }
 
 
 /*                             SOBRE NÓS                              */
 
 
-
-
-
 article {
     text-align: center;
-    height: 800px;
-         
+    /* height: 800px; - Sugestão: remover altura fixa */
+    padding: 60px 20px; /* Adicionado padding */
 }
-article div img{
-    border-radius: 50%;
+
+/* Ajuste de centralização no article */
+.divA, .divB {
+    display: inline-block;
+    /* Removido justify-items: center; pois não é grid/flex */
+    /* Adicionado alinhamento para o contêiner interno */
+    vertical-align: top;
 }
-.sobrea{
+
+/* A divB provavelmente deve ter margem relativa ao seu contêiner, não um valor fixo de 300px */
+.divB {
+    margin-left: 50px; /* Valor mais seguro que 300px fixo */
+}
+
+.sobrea {
     text-align: center;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgb(0, 0, 0);
     width: 400px;
-    height: 200px;
-    background-color:  #ff52a3;
+    height: 200px; /* Altura fixa pode cortar texto */
+    background-color: var(--secondary-color);
 }
 
- .sobreimg{
+.sobreimg {
     width: 220px;
     height: 220px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    text-align: center;
     padding: 5px;
-    border-radius: 50px;
     
+    /* CORREÇÃO: Removido border-radius: 50px; que conflita com border-radius: 50%; */
 }
- .psobre {
+
+.psobre {
     font-size: 14px;
     color: #000000;
 }
-
-.divA {
-    display: inline-block;
-    justify-items: center;
-}
-
-.divB  {
-    display: inline-block;
-    justify-items: center;
-    margin-left: 300px;
-}
-/* .sobreimg {
-    width: 220px;
-    height: 220px;
-    /* margin-bottom: 15px;  */
-    /* text-align: center;
-    padding: 5px;
-    border-radius: 15px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-} */
-
-
-
 
 
 
@@ -341,30 +412,125 @@ article div img{
     margin-bottom: 15px;
 }
 
+ /* carroseu*/
+
+.container-slider {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.container-imagen {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+}
+
+.slider {
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+
+}
+
+#prev-button, #next-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#prev-button img, #next-buttom im
+
 /*              CONTATO         */
 
 
 aside {
     height: 700px;
     margin-top: 100px;
+    display: flex;
 }
 
+#contato{
+    padding: 60px 20px;
 
+}
+#contato > div {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 
+        "contatoqua horario"
+        "especialista especialista";
+    grid-template-columns: 3fr 1fr; 
+    gap: 30px;
+    align-items: start;
+}
+.contatoqua {
+    grid-area: contatoqua; 
+    text-align: left;
+}
+.contatoqua button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+}
+.contatoqua button:hover {
+    background-color: #fb8c00;
+    transform: translateY(-2px);
+}
 
+.horario {
+    grid-area: horario; 
+    background-color: #e0f2f1; 
+    border: 1px solid #b2dfdb;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-subtle);
+}
 
+.especialista {
+    grid-area: especialista; 
+    margin-top: 30px;
+    text-align: center;
+}
 
+.especialista ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+    padding: 20px 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+/* VERIFIQUE ESTA PARTE */
+.especialista li {
+    /* ... */
+    height: 40px; /* Esta altura fixa PODE estar cortando o conteúdo do seu card! */
+    font-size: 30px; 
+    border-style:solid;
+}
+.especialista li:hover {
+    box-shadow: goldenrod;
+    transform:scale(1.1) ;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
 
 
 
