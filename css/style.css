@@ -1,599 +1,558 @@
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+/* ======================= FONTE E VARIÁVEIS ======================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 :root {
-    --cor: #734652;
-    --cor: #F22987;
-    --cor: #D9048E;
-    --cor: #55B3D9;
-    --cor: #85DEF2;
-    --cor: #BBF2F2;
-    --cor: #D9D0A0;
+  /* Paleta de cores */
+  --cor-1: #734652;
+  --cor-2: #f22987; /* Rosa Forte */
+  --cor-3: #d9048e;
+  --cor-4: #55b3d9; /* Azul Claro */
+  --cor-5: #85def2;
+  --cor-6: #bbf2f2;
+  --cor-7: #d9d0a0;
 
+  /* Cores principais semânticas */
+  --primary-color: #f22987;
+  --secondary-color: #55b3d9;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+
+  /* Sombra padrão */
+  --shadow-subtle: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
+/* ======================= RESET ======================= */
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Fugaz One", sans-serif;
-    background-color: #734652;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f9f9f9;
 }
 
 p {
-    color: black;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/*                                               CABEÇALHO                                                  */
+/* ======================= CABEÇALHO / HEADER ======================= */
 
 header {
-    width: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
+/* Container geral do menu */
 .menu {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 70px;
-    background-color: #734652;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+/* ======================= LOGO ======================= */
 
 .logoicone {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.5em;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2em;
 }
-
 
 .logoicone img {
-    width: 70px;
-    height: auto;
+  width: 60px;
+  height: auto;
 }
 
-/*                                                 MENU DE NAVEGAÇÃO                                        */
-.ancora nav,
-ul,
-li,
-a {
-    background-color: #734652;
-
-}
+/* ======================= MENU DE NAVEGAÇÃO ======================= */
 
 .ancora ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
-.ancora a {
-    text-decoration: none;
-    color: black ;
-}
-
-.login {
-    display: flex;
-    align-items: center;
-}
-
-.login img {
-    width: 70px;
-    height: auto;
-    display: block;
-}
-
-div .logoa {
-    height: 100px;
-    width: 100px;
-}
-
-.logob {
-    height: 80px;
-    width: 80px;
-}
-
+/* Links do menu limpos */
 .botaonav {
-    background-color: var(--secondary-color); 
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 15px 30px;
-    display: inline-block;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s;
-    border-radius: 100px; 
+  background-color: transparent;
+  color: #555;
+  padding: 0;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  font-size: 1.05em;
 }
 
 .botaonav:hover {
-    
-    color: white;
+  color: var(--primary-color);
+  background-color: transparent;
+  transform: translateY(-2px);
 }
 
-/*                                              CONTEÚDO MAIN                                          */
+/* Ícone de perfil / Login */
+.login img {
+  width: 50px;
+  height: auto;
+}
+
+/* ======================= MAIN (HERO SECTION) ======================= */
 
 main {
-    background-image: url(../img/cabecalho/veterinario-cuidando-de-cachorro-de-estimacao.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center; /* Adicionado: Centraliza a imagem */
-    height: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 300px;
+  /* Gradiente ajustado (30% sólido -> 70% transparente) */
+  background: linear-gradient(to right, #ffffff 30%, rgba(255, 255, 255, 0) 70%),
+    url("../img/cabecalho/veterinario-cuidando-de-cachorro-de-estimacao.jpg");
+
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
 }
 
+/* Caixa com texto principal */
 .dialogomain {
-    height: 200px; 
-    width: 600px;
-    background-color: rgba(0, 0, 0, 0.65);
-    padding: 50px 70px;
-    border-radius: 10px;
-    
-    font-size: 1.1em;
-    font-weight: 600;
+  width: 550px;
+  background-color: transparent;
+  padding: 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.dialogomain h2,
-.dialogomain span,
-.dialogomain p,
-.dialogomain strong {
-    background: transparent;
-    color: white;
-    padding: 5px 0; 
-}
-.mainimg{
-    background: transparent;
-}
-.dialogomain img{
-    height: 150px;
-    width: 150px;
-    background: transparent;
+.dialogomain h1 {
+  color: var(--primary-color);
+  font-size: 3.5em;
+  line-height: 1.1;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 5px;
 }
 
-.botaoconsulta,
-a {
-    background-color: transparent;
+.dialogomain span strong {
+  color: #555;
+  font-size: 1.4em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.dialogomain p {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+/* Remove a imagem antiga se existir */
+.dialogomain img.shitzu-recorte { display: none; }
+.mainimg img { display: none; }
+
+/* Botão Consulta Principal */
+.botaoconsulta {
+    margin-top: 10px;
 }
 
 .botaoconsulta button {
-    height: 50px;
-    width: 250px;
-    border-radius: 50px;
-    background-color: #f22987;
-    cursor: pointer;
-    border: solid;
-    border-color: #000000;
-    color: white; 
-    font-weight:50px ; 
-    transition: background-color 0.3s;
-    size:50px;
+  height: 55px;
+  width: 250px;
+  border-radius: 50px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(242, 41, 135, 0.4);
+  transition: 0.3s ease;
 }
+
 .botaoconsulta button:hover {
-    background-color: #55B3D9;
-    color: black;
+  background-color: #d9048e;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(242, 41, 135, 0.6);
 }
 
-
-
-/*                         SERVIÇOS                          */
-
+/* ======================= SERVIÇOS ======================= */
 
 #servicos {
-    gap: 50px;
-    text-align: center;
-    background:transparent;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff;
 }
 
 #servicos h1 {
-    color: #00796b;
-    margin-bottom: 40px;
-    font-size: 2.5em;
-    background: transparent;
+  color: var(--cor-1);
+  margin-bottom: 40px;
+  font-size: 2.5em;
 }
-
-
 
 .servicos-grid {
-    display: grid;
- 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    max-width: 1000px;
-    margin: 0 auto; 
-    gap: 30px;
-    padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1100px;
+  margin: auto;
+  gap: 30px;
 }
 
-/* ========================================================= */
-/* ESTILO BASE DO CARD ROTATIVO (Flip Card) */
-/* ========================================================= */
+/* ======================= CARTÃO COM EFEITO FLIP ======================= */
 
 .cartao {
-    background-color: transparent;
-    width: 100%; /* Ocupa a largura total da coluna do Grid */
-    height: 350px; 
-    perspective: 1000px; 
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+  background-color: transparent;
+  width: 100%;
+  height: 350px;
+  perspective: 1000px;
 }
 
 .cartao-interno {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s; 
-    transform-style: preserve-3d;
-    border-radius: 15px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  
+  /* SOMBRA NOVA: Mais espalhada e visível */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30); 
+  border-radius: 15px;
 }
 
-/* Efeito de Rotação ao passar o mouse */
 .cartao:hover .cartao-interno {
-    transform: rotateY(180deg);
-}
-/* Se usar JS para clique, use a classe .is-flipped como mencionado anteriormente */
-
-/* Posição das faces */
-.cartao-frente, .cartao-verso {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    box-sizing: border-box;
+  transform: rotateY(180deg);
 }
 
-/* ========================================================= */
-/* ESTILO ESPECÍFICO DA FRENTE */
-/* ========================================================= */
+.cartao-frente,
+.cartao-verso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .cartao-frente {
-    background-color: #ffffff; /* Fundo branco */
-    color: #333;
-    border: 3px solid #b2dfdb; /* Borda suave */
-    
+  background-color: #ffffff;
+  
+  /* MUDANÇA: Usei sua cor-5 (#85def2) que aparece mais que a cor-6 */
+  border: 2px solid var(--cor-5); 
+  color: #333;
 }
-
-.cartao-frente .icon-front {
-    font-size: 3em;
-    color: #ff9800; /* Laranja de destaque para os ícones */
-    margin-bottom: 15px;
-}
-
-.cartao-frente h3 {
-    font-size: 1.5em;
-    color: #00796b;
-    margin-bottom: 5px;
-    background: transparent;
-}
-
-.cartao-frente p {
-    font-size: 1em;
-    color: #666;
-}
-
-/* ========================================================= */
-/* ESTILO ESPECÍFICO DO VERSO */
-/* ========================================================= */
 
 .cartao-verso {
-    background-color: #00796b; /* Fundo verde-água */
-    color: white;
-    transform: rotateY(180deg); 
-    padding: 40px 25px;
-    
-}
-
-.cartao-verso h3 {
-    font-size: 1.6em;
-    margin-bottom: 10px;
-    color: white;
-    background: transparent;
-}
-
-.cartao-verso p {
-    font-size: 1em;
-    margin-bottom: 25px;
-    line-height: 1.5;
+  background-color: var(--secondary-color);
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .btn-saibamais {
-    background-color: #ff9800;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
+  background-color: white;
+  color: var(--secondary-color);
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: 0.3s;
 }
 
 .btn-saibamais:hover {
-    background-color: #fb8c00;
+  background-color: var(--primary-color);
+  color: white;
 }
 
-
-/*                             SOBRE NÓS                              */
-
+/* ======================= SOBRE NÓS ======================= */
 
 article {
-    text-align: center;
-    /* height: 800px; - Sugestão: remover altura fixa */
-    padding: 60px 20px; /* Adicionado padding */
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f4fbfc;
 }
 
-/* Ajuste de centralização no article */
 .divA, .divB {
-    display: inline-block;
-    /* Removido justify-items: center; pois não é grid/flex */
-    /* Adicionado alinhamento para o contêiner interno */
-    vertical-align: top;
-}
-
-/* A divB provavelmente deve ter margem relativa ao seu contêiner, não um valor fixo de 300px */
-.divB {
-    margin-left: 50px; /* Valor mais seguro que 300px fixo */
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 450px;
+  text-align: left;
+  margin: 20px;
 }
 
 .sobrea {
-    text-align: center;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgb(0, 0, 0);
-    width: 400px;
-    height: 200px; /* Altura fixa pode cortar texto */
-    background-color: var(--secondary-color);
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: var(--shadow-subtle);
 }
 
-.sobreimg {
-    width: 220px;
-    height: 220px;
+.sobreimg img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: var(--shadow-subtle);
+}
+
+/* ======================= AVALIAÇÕES ======================= */
+#avaliacoes div, button{
+gap: 220px;
+}
+
+ .container-slider {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+} 
+
+ .container-imagen {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 400px;  
+  overflow: hidden;   
+  border-radius: 2px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  flex-direction: row ;
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+} 
+ .container-imagen img{
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    padding: 5px;
-    
-    /* CORREÇÃO: Removido border-radius: 50px; que conflita com border-radius: 50%; */
+    border: solid 2px;
 }
 
-.psobre {
-    font-size: 14px;
-    color: #000000;
-}
-
-
-
-
-/*                        AVALIAÇÕES               */
-
-.depoimentos {
-    background-color: #734652;
-    padding: 60px 40px;
-    text-align: center;
-    
-}
-
-.depoimentos h4 {
-    color: black;
-    background: transparent;
-    margin-bottom: 30px;
-    font-size: 1.3rem;
-}
-
-.depoimentos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-
-.depoimento {
-
-    background: #BBF2F2;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgb(0, 0, 0);
-    padding: 20px;
-    width: 220px;
-    text-align: center;
-    height: 420px;
-}
-
-.depoimento img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
- /* carroseu*/
-
-.container-slider {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.container-imagen {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 700px;
-}
 
 .slider {
-    width: 100%;
+    object-fit: cover;
     border-radius: 10px;
     position: absolute;
-
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-#prev-button, #next-button {
-    width: 30px;
-    height: 30px;
+.on {
+    opacity: 1;
+}
+
+#prev,
+#next {
+    width: 40px;
+    height: 40px;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    gap: 200px;
 }
 
-#prev-button img, #next-buttom im
-
-/*              CONTATO         */
-
-
-aside {
-    height: 700px;
-    margin-top: 100px;
-    display: flex;
+#prev img,
+#next img {
+    width: 100%;
+    height: 100%;
 }
 
-#contato{
-    padding: 60px 20px;
-
+#next{
+    transform: rotate(90deg);
 }
+#prev {
+    transform: rotate(270deg);
+}
+
+
+/* ======================= CONTATO ======================= */
+
+#contato {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
 #contato > div {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-areas: 
-        "contatoqua horario"
-        "especialista especialista";
-    grid-template-columns: 3fr 1fr; 
-    gap: 30px;
-    align-items: start;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "contatoqua horario"
+    "especialista especialista";
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
 }
-.contatoqua {
-    grid-area: contatoqua; 
-    text-align: left;
+
+.contatoqua, .especialista, .horario {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid #eee;
 }
+
+.contatoqua { grid-area: contatoqua; }
+.horario { grid-area: horario; text-align: center; }
+.especialista { grid-area: especialista; text-align: center; }
+
 .contatoqua button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 15px 35px;
-    font-size: 1.1em;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: 0.3s ease;
 }
+
 .contatoqua button:hover {
-    background-color: #fb8c00;
-    transform: translateY(-2px);
-}
-
-.horario {
-    grid-area: horario; 
-    background-color: #e0f2f1; 
-    border: 1px solid #b2dfdb;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-subtle);
-}
-
-.especialista {
-    grid-area: especialista; 
-    margin-top: 30px;
-    text-align: center;
+  background-color: var(--cor-1);
 }
 
 .especialista ul {
-    list-style: none; 
-    padding: 0;
-    margin: 0;
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 20px;
-    padding: 20px 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-/* VERIFIQUE ESTA PARTE */
 .especialista li {
-    /* ... */
-    height: 40px; /* Esta altura fixa PODE estar cortando o conteúdo do seu card! */
-    font-size: 30px; 
-    border-style:solid;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: #f9f9f9;
+  transition: 0.25s ease;
 }
+
 .especialista li:hover {
-    box-shadow: goldenrod;
-    transform:scale(1.1) ;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background-color: var(--secondary-color);
+  color: white;
+  transform: scale(1.05);
+  border-color: transparent;
 }
 
+@media (max-width: 900px) {
+  #contato > div {
+    grid-template-areas:
+      "contatoqua"
+      "horario"
+      "especialista";
+    grid-template-columns: 1fr;
+  }
+}
 
+/* ======================= RODAPÉ ======================= */
 
-
-
-
-/*                       RODAPÉ                    */
 footer {
-    background: #ff52a3;
-    display: flex;
-
-    justify-content: space-around;
-    height: 200px;
-
+  background: var(--cor-1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 20px;
+  color: white;
+  gap: 30px;
 }
 
-.minimapa {
-    background: transparent;
-}
-
-.navrodape {
-    background: transparent;
-}
-
-.navrodape h6 {
-    background: transparent;
-}
-
-.navrodape ul {
-    background: transparent;
-}
+.navrodape ul { padding: 0; }
 
 .navrodape li {
-    list-style: none;
-    background: transparent;
+  list-style: none;
+  margin-bottom: 10px;
 }
 
 .navrodape a {
-    background: transparent;
-    text-decoration: none;
-    color: white;
-    gap: 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.2s;
+}
+
+.navrodape a:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 .redesocial {
-    background: transparent;
-    gap: 10px;
+  display: flex;
+  gap: 15px;
 }
 
 .redesocial img {
-    display: block;
-    background: transparent;
-    height: 30px;
-    width: 30px;
+  width: 32px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  filter: brightness(0) invert(1);
 }
 
-.decolaweb {
-    background: transparent;
-    align-items: center;
-}
+.redesocial img:hover { transform: scale(1.2); }
 
 .decolaweb img {
-    background: transparent;
-    height: 120px;
-    width: 200px
+  width: 150px;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+/* ======================= ÍCONES DOS SERVIÇOS ======================= */
+
+.icone-servico {
+    width: 65px;  /* Tamanho padrão */
+    height: 65px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    
+    /* PINTA O ÍCONE PRETO DE ROSA */
+    filter: invert(28%) sepia(93%) saturate(3066%) hue-rotate(313deg) brightness(91%) contrast(98%);
+}
+
+.cartao:hover .icone-servico {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.cartao-frente h3 {
+    margin-bottom: 8px;
+    color: var(--cor-1);
+    font-size: 1.4em;
+}
+
+/* ======================= CORREÇÃO ESPECÍFICA ======================= */
+/* Aumenta o ícone de castração (que visualmente parece menor) */
+
+.icone-grande {
+    width: 95px !important;
+    height: 95px !important;
+    margin-bottom: 5px; /* Ajuste para manter o alinhamento do texto */
 }
