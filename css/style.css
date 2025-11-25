@@ -6,9 +6,11 @@
 :root {
   /* Paleta de cores */
   --cor-1: #734652;
-  --cor-2: #f22987; /* Rosa Forte */
+  --cor-2: #f22987;
+  /* Rosa Forte */
   --cor-3: #d9048e;
-  --cor-4: #55b3d9; /* Azul Claro */
+  --cor-4: #55b3d9;
+  /* Azul Claro */
   --cor-5: #85def2;
   --cor-6: #bbf2f2;
   --cor-7: #d9d0a0;
@@ -23,6 +25,7 @@
   --shadow-subtle: 0 4px 10px rgba(0, 0, 0, 0.1);
   --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
+
 /* ======================= RESET ======================= */
 
 * {
@@ -33,7 +36,8 @@
   text-decoration: none;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
   background-color: #f9f9f9;
@@ -42,6 +46,11 @@ html, body {
 p {
   color: var(--text-dark);
   line-height: 1.6;
+}
+
+.wave1 {
+  margin: 0;
+  padding: 0;
 }
 
 /* ======================= CABEÇALHO / HEADER ======================= */
@@ -126,8 +135,7 @@ main {
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
-
-  height: 85vh;
+  height: 98vh;
   display: flex;
   align-items: center;
   padding-left: 10%;
@@ -138,7 +146,7 @@ main {
   width: 550px;
   background-color: transparent;
   padding: 0;
-  
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -168,12 +176,17 @@ main {
 }
 
 /* Remove a imagem antiga se existir */
-.dialogomain img.shitzu-recorte { display: none; }
-.mainimg img { display: none; }
+.dialogomain img.shitzu-recorte {
+  display: none;
+}
+
+.mainimg img {
+  display: none;
+}
 
 /* Botão Consulta Principal */
 .botaoconsulta {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .botaoconsulta button {
@@ -197,11 +210,14 @@ main {
 }
 
 /* ======================= SERVIÇOS ======================= */
-
+.servicos{
+  height: 100vh;
+}
 #servicos {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px;
   background-color: #fff;
+  margin: 0;
 }
 
 #servicos h1 {
@@ -233,9 +249,9 @@ main {
   height: 100%;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
-  
+
   /* SOMBRA NOVA: Mais espalhada e visível */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30);
   border-radius: 15px;
 }
 
@@ -259,9 +275,9 @@ main {
 
 .cartao-frente {
   background-color: #ffffff;
-  
+
   /* MUDANÇA: Usei sua cor-5 (#85def2) que aparece mais que a cor-6 */
-  border: 2px solid var(--cor-5); 
+  border: 2px solid var(--cor-5);
   color: #333;
 }
 
@@ -292,14 +308,34 @@ article {
   text-align: center;
   padding: 80px 20px;
   background-color: #f4fbfc;
+  margin: 0;
+  height: 90vh;
+
 }
 
-.divA, .divB {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 450px;
-  text-align: left;
-  margin: 20px;
+.sobremov {
+  font-size: 30px;
+  padding-bottom: 120px;
+}
+
+.divA {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+
+  height: 300px;
 }
 
 .sobrea {
@@ -309,89 +345,114 @@ article {
   box-shadow: var(--shadow-subtle);
 }
 
-.sobreimg img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid white;
-  box-shadow: var(--shadow-subtle);
+.dogimg,
+.gatoimg {
+  width: 350px;
+  height: 400px;
+
+
+}
+
+.psobre {
+  border-radius: 2px;
+  margin: 0;
+  padding: 0;
+  box-shadow: #333;
+
+
 }
 
 /* ======================= AVALIAÇÕES ======================= */
-#avaliacoes div, button{
-gap: 220px;
+#avaliacoes {
+  margin: 0;
+  padding: 0;
+
+
 }
 
- .container-slider {
+.container-slider {
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-} 
 
- .container-imagen {
+}
+
+.container-imagen {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 600px;
-  height: 400px;  
-  overflow: hidden;   
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
   border-radius: 2px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-  flex-direction: row ;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  flex-direction: row;
   border-radius: 20px;
   border: 2px solid var(--primary-color);
-} 
- .container-imagen img{
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    border: solid 2px;
+  background-color: var(--text-light);
+
+}
+
+.container-imagen img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 2px;
+  background-color: transparent;
 }
 
 
 .slider {
-    object-fit: cover;
-    border-radius: 10px;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  object-fit: cover;
+  border-radius: 10px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  gap: 20px;
+}
+
+.slider p {
+  color: black;
 }
 
 .on {
-    opacity: 1;
+  opacity: 1;
 }
 
 #prev,
 #next {
-    width: 40px;
-    height: 40px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    gap: 200px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  gap: 200px;
 }
 
 #prev img,
 #next img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-#next{
-    transform: rotate(90deg);
+#next {
+  transform: rotate(90deg);
+  filter: invert(72%) sepia(50%) saturate(1600%) hue-rotate(149deg) brightness(98%) contrast(92%);
 }
+
 #prev {
-    transform: rotate(270deg);
+  transform: rotate(270deg);
+  filter: invert(72%) sepia(50%) saturate(1600%) hue-rotate(149deg) brightness(98%) contrast(92%);
 }
 
 
@@ -402,7 +463,7 @@ gap: 220px;
   background-color: #fff;
 }
 
-#contato > div {
+#contato>div {
   max-width: 1100px;
   margin: auto;
   display: grid;
@@ -413,7 +474,9 @@ gap: 220px;
   gap: 30px;
 }
 
-.contatoqua, .especialista, .horario {
+.contatoqua,
+.especialista,
+.horario {
   background: #fff;
   padding: 30px;
   border-radius: 14px;
@@ -421,9 +484,19 @@ gap: 220px;
   border: 1px solid #eee;
 }
 
-.contatoqua { grid-area: contatoqua; }
-.horario { grid-area: horario; text-align: center; }
-.especialista { grid-area: especialista; text-align: center; }
+.contatoqua {
+  grid-area: contatoqua;
+}
+
+.horario {
+  grid-area: horario;
+  text-align: center;
+}
+
+.especialista {
+  grid-area: especialista;
+  text-align: center;
+}
 
 .contatoqua button {
   background-color: var(--primary-color);
@@ -466,7 +539,7 @@ gap: 220px;
 }
 
 @media (max-width: 900px) {
-  #contato > div {
+  #contato>div {
     grid-template-areas:
       "contatoqua"
       "horario"
@@ -478,17 +551,21 @@ gap: 220px;
 /* ======================= RODAPÉ ======================= */
 
 footer {
-  background: var(--cor-1);
+  background: rgba(128, 128, 128, 0.404);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   padding: 50px 20px;
-  color: white;
+  color: black;
   gap: 30px;
 }
-
-.navrodape ul { padding: 0; }
+footer p{
+  color: black;
+}
+.navrodape ul {
+  padding: 0;
+}
 
 .navrodape li {
   list-style: none;
@@ -497,13 +574,14 @@ footer {
 
 .navrodape a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(0, 0, 0);
   transition: 0.2s;
 }
 
 .navrodape a:hover {
-  color: white;
-  text-decoration: underline;
+  color: var(--primary-color);
+  text-decoration:none;
+
 }
 
 .redesocial {
@@ -518,7 +596,22 @@ footer {
   filter: brightness(0) invert(1);
 }
 
-.redesocial img:hover { transform: scale(1.2); }
+.whats {
+  filter: invert(72%) sepia(50%) saturate(1600%) hue-rotate(120deg) brightness(150%) contrast(92%);
+}
+
+.insta {
+  filter: invert(72%) sepia(50%) saturate(1600%) hue-rotate(275deg) brightness(150%) contrast(92%)  ;
+  
+}
+
+.face {
+  filter: invert(72%) sepia(50%) saturate(1600%) hue-rotate(220deg) brightness(150%) contrast(92%);
+}
+
+.redesocial img:hover {
+  transform: scale(1.2);
+}
 
 .decolaweb img {
   width: 150px;
@@ -529,30 +622,102 @@ footer {
 /* ======================= ÍCONES DOS SERVIÇOS ======================= */
 
 .icone-servico {
-    width: 65px;  /* Tamanho padrão */
-    height: 65px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-    
-    /* PINTA O ÍCONE PRETO DE ROSA */
-    filter: invert(28%) sepia(93%) saturate(3066%) hue-rotate(313deg) brightness(91%) contrast(98%);
+  width: 65px;
+  /* Tamanho padrão */
+  height: 65px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+
+  /* PINTA O ÍCONE PRETO DE ROSA */
+  filter: invert(28%) sepia(93%) saturate(3066%) hue-rotate(313deg) brightness(91%) contrast(98%);
 }
 
 .cartao:hover .icone-servico {
-    transform: scale(1.15) rotate(5deg);
+  transform: scale(1.15) rotate(5deg);
 }
 
 .cartao-frente h3 {
-    margin-bottom: 8px;
-    color: var(--cor-1);
-    font-size: 1.4em;
+  margin-bottom: 8px;
+  color: var(--cor-1);
+  font-size: 1.4em;
 }
 
 /* ======================= CORREÇÃO ESPECÍFICA ======================= */
 /* Aumenta o ícone de castração (que visualmente parece menor) */
 
 .icone-grande {
-    width: 95px !important;
-    height: 95px !important;
-    margin-bottom: 5px; /* Ajuste para manter o alinhamento do texto */
+  width: 95px !important;
+  height: 95px !important;
+  margin-bottom: 5px;
+  /* Ajuste para manter o alinhamento do texto */
+}
+
+/* ========================== RESPONSIVIDADE ========================== */
+
+/* Esconde o checkbox */
+#menuuu {
+  display: none;
+}
+
+/* Ícone hambúrguer (mobile) */
+.burger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+@media screen and (max-width: 1020px) {
+
+  /* Mostra o hambúrguer */
+  .burger {
+    display: block;
+  }
+
+  /* Menu vira coluna */
+  .junto {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #f4fbfc;
+    width: 200px;
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 15px;
+
+    /* Esconde o menu por padrão */
+    display: nonee;
+  }
+
+  /* Quando o checkbox estiver marcado → mostra o menu */
+  #menu-toggle:checked+.burger+.menu {
+    display: flex;
+  }
+
+  img.cll,
+  img.clll {
+    width: 40px;
+    height: 40px;
+  }
+
+  div.container-imagen {
+    width: 370px;
+    height: 370px;
+  }
+
+  img.clll {
+    width: 90px;
+    height: 90px;
+  }
+
+  .rodape {
+    display: grid;
+    grid-column: column;
+  }
+
+  .gatoimg, .dogimg  {
+    display: none;
+  }
+
 }
