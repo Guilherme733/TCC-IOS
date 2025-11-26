@@ -326,6 +326,23 @@ article {
   gap: 10px;
 }
 
+@keyframes float {
+  0% {
+      transform: translateY(0px); 
+  }
+  50% {
+    transform: translateY(-15px); 
+  }
+  100% {
+    transform: translateY(0px); 
+  }
+}
+.draimg {
+  max-width: 300px; 
+  height: auto;
+  position: relative; 
+  animation: float 4s ease-in-out infinite; 
+}
 .sobre {
   display: flex;
   flex-direction: column;
@@ -670,12 +687,12 @@ footer p{
 
 @media screen and (max-width: 1020px) {
 
-  /* Mostra o hambúrguer */
+  /* Mostra o hambúrguer
   .burger {
     display: block;
   }
 
-  /* Menu vira coluna */
+  /* Menu vira coluna 
   .junto {
     position: absolute;
     top: 60px;
@@ -686,14 +703,14 @@ footer p{
     padding: 20px 10px;
     gap: 15px;
 
-    /* Esconde o menu por padrão */
+    Esconde o menu por padrão 
     display: nonee;
   }
 
-  /* Quando o checkbox estiver marcado → mostra o menu */
+  /* Quando o checkbox estiver marcado → mostra o menu 
   #menu-toggle:checked+.burger+.menu {
     display: flex;
-  }
+  } */
 
   img.cll,
   img.clll {
@@ -720,4 +737,86 @@ footer p{
     display: none;
   }
 
+}
+#menuuu {
+    display: none;
+}
+
+/* 2. Esconde o ícone do hambúrguer no Desktop */
+.burger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--primary-color);
+    padding: 5px;
+}
+
+/* 3. Garante o estilo Desktop padrão */
+.ancora ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@media (max-width: 768px) {
+  @keyframes descerMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    /* Mostra o ícone ☰ no celular */
+    .burger {
+        display: block;
+    }
+
+    /* Esconde o menu original e prepara a posição */
+    .ancora ul {
+        display: none; /* Esconde a lista inicialmente */
+        flex-direction: column; /* Um item abaixo do outro */
+        position: absolute; /* Sai do fluxo normal */
+        top: 100%; /* Cola logo abaixo do cabeçalho */
+        left: 0;
+        width: 100%; /* Largura total da tela */
+        background-color: #ffffff;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 9999; /* Garante que fique na frente de TUDO */
+        border-top: 1px solid #eee;
+    }
+
+    /* Estilo dos links no mobile */
+    .ancora ul li {
+        margin: 15px 0;
+        width: 100%;
+    }
+    
+    .ancora ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 1.2em;
+    }
+
+    /* === A LÓGICA DE ABRIR === */
+    /* Quando o checkbox estiver marcado, forçamos o display flex na lista */
+    #menuuu:checked ~ ul {
+        display: flex !important; /* !important garante que vai abrir */
+        animation: descer 0.3s ease-in-out;
+    }
+
+    /* Efeito no ícone (opcional) */
+    #menuuu:checked ~ .burger {
+  
+        transition: 0.3s;
+    }
 }
