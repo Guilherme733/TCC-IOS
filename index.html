@@ -41,9 +41,9 @@
                     </ul>
                 </nav>
             </div>
-            <div class="login">
-                <a href="./html/login.html"><img src="./img/cabecalho/login-removebg-preview.png" alt="login"
-                        class="login"></a>
+            <div class="area-agendamento">
+                <a href="./html/Agendar.html"> <button class="btn-header">Agende sua Consulta</button>
+                </a>
             </div>
         </div>
     </header>
@@ -53,14 +53,14 @@
             <span><strong>Cuidado e carinho para quem você ama</strong></span>
             <p>Sua clinica de confiança</p>
             <div class="botaoconsulta">
-                <a href="./html/login.html">
+                <a href="./html/Agendar.html">
                     <button> Agende sua Consulta </button>
                 </a>
             </div>
         </div>
     </main>
     <section id="servicos">
-        <h1>Nossos Serviços</h1>
+        <h1 class="he">Nossos Serviços</h1>
         <div class="servicos-grid">
             <div class="cartao">
                 <div class="cartao-interno">
@@ -162,91 +162,112 @@
         </div>
     </section>
 
-    <article id="sobre">
-        <div class="sobremov">
-            <h2>Sobre nós</h2>
-        </div>
-        <div class="divA">
-            <div class="sobreimg">
-                <img src="./img/sobre/gatosemfundo.png" alt="gatos se lambendo" class="gatoimg">
-            </div>
-            <div class="sobre">
-                <img src="./img/sobre/Dra. Maristela SemFundo..png" alt="" class="draimg">
-                <h3>Maristela Armiliato</h3>
-                <p class="psobre">Graduada na UFRGS em 1988. Curso de Especialização em Homeopatia em 1997.
-                    Atua em Clínica de Pequenos Animais desde a graduação, buscando atualização
-                    profissional constante.
-                    Em 2018 iniciou uma nova jornada com a proposta de um ATENDIMENTO
-                    DIFERENCIADO, com QUALIDADE e COMPROMETIMENTO com cada paciente.
-                    Visando alcançar SAÚDE e BEM-ESTAR.</p>
-            </div>
-            <div>
-                <img src="./img/sobre/dogsemfundo.png" alt="cachorro feliz" class="dogimg">
-            </div>
-        </div>
+    <div class="pa">
+        <article id="sobre" class="sobreb">
+            <div class="sobremov">
+                <h2>Sobre nós</h2>
+                <br>
+                <br>
 
-    </article>
-
-    <section class="depoimentos" id="avaliacao">
-        <div class="container-slider">
-            <button id="prev">
-                <img src="./img/avaliacao/Pata-direcionadora.svg" alt="prev" class="cll">
-            </button>
-            <div class="container-imagen">
-                <div class="slider on">
-                    <img src="./img/avaliacao/cachorroPet1.jpeg" alt="Cliente 1" class="clll">
-                    <h3>Karina</h3>
-                    <p>“A Maristela é sempre muito atenciosa e carinhosa com meu cachorrinho Rocky. Ele vai fazer 10
-                        anos e se trata desde filhote com ela. Realizo as vacinas e consultas regulares no consultório e
-                        já fizemos castração e limpeza nos dentinhos também. Recomendo consultório!”</p>
+            </div>
+            <div class="divA">
+                <div class="sobreimg">
+                    <svg class="estrelas " viewBox="0 0 1162 1364" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M910.817 156.306C910.817 125.235 869.834 5.89838 923.289 0.258091C950.215 -2.71048 962.391 20.4444 966.152 43.2034C978.922 119.793 1032.18 312.75 1097.81 338.675C1124.64 349.164 1189.48 340.061 1149.09 399.432C1147.99 401.045 1146.44 402.286 1144.63 402.994C998.423 462.663 1005.55 568.641 992.682 703.711C989.019 742.104 974.666 758.234 931.209 743.193C929.579 742.616 928.127 741.619 926.998 740.299C925.869 738.98 925.102 737.385 924.774 735.672L891.216 563.891C887.653 545.552 879.766 527.477 867.557 509.665C818.953 438.716 735.999 488.885 675.515 511.644C673.04 512.53 670.31 512.424 667.893 511.347C634.236 496.175 624.007 477.308 637.206 454.746C651.362 430.602 699.57 420.311 725.803 411.009C849.079 367.602 910.751 282.701 910.817 156.306ZM953.779 290.782C936.554 335.905 910.288 374.826 874.982 407.546C873.883 408.573 873.033 409.837 872.497 411.241C871.96 412.646 871.75 414.154 871.884 415.652C872.018 417.149 872.491 418.597 873.268 419.884C874.045 421.172 875.105 422.265 876.368 423.082C896.562 436.077 912.466 452.57 924.081 472.558C929.361 481.662 935.234 490.765 941.702 499.869C948.433 509.368 954.141 508.807 958.827 498.187C975.655 459.991 1000.5 427.864 1033.37 401.807C1034.48 400.93 1035.39 399.827 1036.05 398.572C1036.7 397.317 1037.07 395.939 1037.15 394.532C1037.22 393.125 1037 391.721 1036.48 390.415C1035.96 389.11 1035.17 387.933 1034.16 386.964C1005.58 359.389 983.674 327.263 968.429 290.584C963.348 278.314 958.464 278.38 953.779 290.782Z" />
+                        <path
+                            d="M341.819 469.491C352.708 408.834 410.123 421.005 413.39 478.991C419.329 583.221 443.747 682.569 486.643 777.035C517.132 844.224 556.134 880.342 631.862 864.608C633.735 864.221 635.665 864.394 637.406 865.103C727.091 900.033 613.747 957.525 588.504 978.7C480.307 1069.14 482.485 1200.45 486.544 1326.72C487.072 1343.14 479.648 1354.19 464.271 1359.87C425.269 1374.21 416.062 1344.13 412.301 1312.57C400.224 1212.03 387.058 1126.8 372.804 1056.87C350.729 948.223 107.013 981.075 31.8791 995.918C30.3985 996.194 28.8795 996.132 27.4383 995.738C25.9971 995.343 24.6719 994.627 23.5639 993.642C-61.2712 921.209 107.904 904.684 138.69 893.206C256.753 849.205 327.565 764.831 351.125 640.085C361.816 583.089 331.227 528.764 341.819 469.491ZM380.426 756.255C358.912 813.252 324.595 861.211 277.475 900.132C264.936 910.489 266.784 916.327 283.019 917.647C363.135 923.914 416.788 962.802 443.978 1034.31C449.125 1047.77 455.131 1048.2 461.994 1035.6C479.812 1002.68 502.646 973.588 530.496 948.322C531.692 947.263 532.607 945.926 533.162 944.428C533.716 942.929 533.894 941.315 533.68 939.725C533.465 938.135 532.864 936.617 531.93 935.305C530.995 933.992 529.755 932.924 528.318 932.193C478.559 906.993 442.856 868.929 421.21 818.002C411.311 794.583 406.328 782.775 406.262 782.577C402.237 773.671 398.574 764.897 395.274 756.255C390.259 743.326 385.309 743.326 380.426 756.255Z" />
+                    </svg>
+                    <img src="./img/sobre/gatinhos.png" alt="gatos se lambendo" class="gatoimg">
                 </div>
-                <div class="slider ">
-                    <img src="./img/avaliacao/cachorroPet2.jpeg" alt="Cliente 2" class="clll">
-                    <h3>Francisco João Lima</h3>
-                    <p>“A doutora é ótima, sempre atendeu muito bem o Luizito, os produtos da conveniência também são de
-                        muita qualidade e de preço justo.”</p>
+                <div class="sobre">
+                    <img src="./img/sobre/Dra. Maristela SemFundo..png" alt="" class="draimg">
+                    <h3>Maristela Armiliato</h3>
+                    <p class="psobre">Graduada na UFRGS em 1988. Curso de Especialização em Homeopatia em 1997.
+                        Atua em Clínica de Pequenos Animais desde a graduação, buscando atualização
+                        profissional constante.
+                        Em 2018 iniciou uma nova jornada com a proposta de um ATENDIMENTO
+                        DIFERENCIADO, com QUALIDADE e COMPROMETIMENTO com cada paciente.
+                        Visando alcançar SAÚDE e BEM-ESTAR.</p>
                 </div>
-                <div class="slider ">
-                    <img src="./img/avaliacao/cachorroPet3.jpeg" alt="Cliente 3" class="clll">
-                    <h3>Leonardo Chagas</h3>
-                    <p>“Experiência positiva! Veterinária foi assertiva e muito atenciosa durante e após a consulta,
-                        inclusive ligando para saber como evoluiu a minha cachorrinha.”</p>
-                </div>
-                <div class="slider ">
-                    <img src="./img/avaliacao/cachorroPet4.jpeg" alt="Cliente 4" class="clll">
-                    <h3>Rosane Zimmermann</h3>
-                    <p>“Os atendentes são muito simpáticos e educados, e a Dra. É simplesmente um anjo. além de uma
-                        ótima
-                        profissional, Tem um carinho e uma paciência não só com o anima, mas com a gente. o que
-                        infelizmente
-                        é raro.”</p>
-                </div>
-                <div class="slider ">
-
-                    <img src="./img/avaliacao/cachorroPet5.jpeg" alt="Cliente 5" class="clll">
-                    <h3>Carla Regina Armiliato</h3>
-                    <p>“A Dra Maristela sempre foi muito atenciosa e carinhosa com nosso pet. Está sempre atualizada com
-                        os procedimentos na sua área. Somos muito gratos pela dedicação com que tratou o Spark.”</p>
-                </div>
-                <div class="slider ">
-                    <img src="./img/avaliacao/cachorroPet6.jpeg" alt="Cliente 6" class="clll">
-                    <h3>Rosane Rosa</h3>
-                    <p>“Dra. Maristela é uma excelente profissional, atenciosa e cuidadosa com nosso pet. Lugar muito
-                        limpo, aconchegante e preço justo.”</p>
+                <div>
+                    <svg class="coracoes" viewBox="0 0 889 1056" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M290.448 241.523C302.655 229.935 314.609 218.124 326.314 206.089C433.577 95.6921 532.564 163.134 479.392 304.452C447.623 388.692 404.4 480.147 349.723 578.816C322.803 627.204 281.335 684.116 230.17 613.498C149.158 501.764 48.4163 342.728 9.20625 202.078C-10.8586 130.123 -5.67574 -0.748911 102.674 0.00322791C166.631 0.421083 223.565 66.0243 244.968 121.181C257.564 153.662 268.07 192.272 276.486 237.011C278.381 247.039 283.036 248.543 290.448 241.523ZM256.171 416.103C255.144 416.875 253.951 417.4 252.688 417.636C251.425 417.873 250.124 417.815 248.887 417.468C247.649 417.12 246.508 416.492 245.553 415.632C244.598 414.772 243.855 413.704 243.38 412.51C226.325 369.972 229.752 325.93 224.653 291.415C217.463 243.278 204.308 196.729 185.191 151.768C174.406 126.279 130.682 63.0994 96.6552 74.7157C34.2034 95.9428 116.052 278.127 135.698 315.902C176.72 394.96 222.2 471.26 272.139 544.803C272.952 545.991 274.055 546.955 275.342 547.602C276.629 548.249 278.057 548.558 279.49 548.5C280.923 548.441 282.314 548.017 283.53 547.267C284.746 546.518 285.746 545.468 286.436 544.218C328.237 469.004 365.859 391.812 399.3 312.642C408.162 291.75 414.878 270.16 419.448 247.875C421.956 235.562 417.804 232.609 406.991 239.016C361.344 266.01 312.687 335.959 269.631 400.308C264.504 407.941 260.017 413.206 256.171 416.103Z" />
+                        <path
+                            d="M659.444 621.904C673.879 597.167 689.206 573.042 705.425 549.531C732.262 510.42 782.925 469.052 832.586 483.761C895.289 502.397 894.035 593.322 883.501 647.393C854.407 796.706 792.791 931.478 698.653 1051.71C697.966 1052.6 697.099 1053.35 696.107 1053.9C695.114 1054.44 694.017 1054.78 692.885 1054.88C652.365 1059.06 633.582 1044.08 636.536 1009.92C636.701 1008.03 636.199 1006.12 635.115 1004.49C624.358 988.669 613.378 973.097 602.175 957.776C554.243 892.312 520.327 816.123 500.43 729.209C489.645 682.409 481.201 603.685 517.652 567.332C555.441 529.641 604.851 558.39 628.427 596.832C633.778 605.579 639.434 614.132 645.398 622.489C646.203 623.632 647.283 624.554 648.538 625.172C649.793 625.79 651.183 626.083 652.58 626.025C653.978 625.967 655.339 625.559 656.538 624.839C657.737 624.119 658.736 623.11 659.444 621.904ZM624.079 771.496C622.834 771.13 621.688 770.48 620.731 769.596C619.774 768.712 619.032 767.618 618.561 766.398C606.021 733.638 593.062 699.346 579.685 663.522C575.673 652.741 560.624 633.186 566.225 670.542C581.051 768.877 612.347 861.836 660.112 949.418C660.795 950.67 661.788 951.726 662.995 952.486C664.202 953.246 665.584 953.684 667.009 953.76C668.433 953.835 669.853 953.545 671.134 952.917C672.415 952.289 673.513 951.343 674.325 950.171C741.654 852.448 787.58 744.642 812.104 626.751C812.772 623.659 818.207 571.427 810.097 560.98C785.434 529.307 702.081 710.907 694.557 732.552C682.434 767.317 662.453 782.109 624.079 771.496Z" />
+                    </svg>
+                    <img src="./img/sobre/cachorrinho.png" alt="cachorro feliz" class="dogimg">
                 </div>
             </div>
-            <button id="next">
-                <img src="./img/avaliacao/Pata-direcionadora.svg" alt="next" class="cll">
-            </button>
-        </div>
-        </div>
+
+        </article>
+
+        <section class="depoimentos" id="avaliacao">
+            <div class="container-slider">
+                <button id="prev">
+                    <img src="./img/avaliacao/Pata-direcionadora.svg" alt="prev" class="cll">
+                </button>
+                <div class="container-imagen">
+                    <div class="slider on">
+                        <img src="./img/avaliacao/cachorroPet1.jpeg" alt="Cliente 1" class="clll">
+                        <h3>Karina</h3>
+                        <p>“A Maristela é sempre muito atenciosa e carinhosa com meu cachorrinho Rocky. Ele vai fazer 10
+                            anos e se trata desde filhote com ela. Realizo as vacinas e consultas regulares no
+                            consultório e
+                            já fizemos castração e limpeza nos dentinhos também. Recomendo consultório!”</p>
+                    </div>
+                    <div class="slider ">
+                        <img src="./img/avaliacao/cachorroPet2.jpeg" alt="Cliente 2" class="clll">
+                        <h3>Francisco João Lima</h3>
+                        <p>“A doutora é ótima, sempre atendeu muito bem o Luizito, os produtos da conveniência também
+                            são de
+                            muita qualidade e de preço justo.”</p>
+                    </div>
+                    <div class="slider ">
+                        <img src="./img/avaliacao/cachorroPet3.jpeg" alt="Cliente 3" class="clll">
+                        <h3>Leonardo Chagas</h3>
+                        <p>“Experiência positiva! Veterinária foi assertiva e muito atenciosa durante e após a consulta,
+                            inclusive ligando para saber como evoluiu a minha cachorrinha.”</p>
+                    </div>
+                    <div class="slider ">
+                        <img src="./img/avaliacao/cachorroPet4.jpeg" alt="Cliente 4" class="clll">
+                        <h3>Rosane Zimmermann</h3>
+                        <p>“Os atendentes são muito simpáticos e educados, e a Dra. É simplesmente um anjo. além de uma
+                            ótima
+                            profissional, Tem um carinho e uma paciência não só com o anima, mas com a gente. o que
+                            infelizmente
+                            é raro.”</p>
+                    </div>
+                    <div class="slider ">
+
+                        <img src="./img/avaliacao/cachorroPet5.jpeg" alt="Cliente 5" class="clll">
+                        <h3>Carla Regina Armiliato</h3>
+                        <p>“A Dra Maristela sempre foi muito atenciosa e carinhosa com nosso pet. Está sempre atualizada
+                            com
+                            os procedimentos na sua área. Somos muito gratos pela dedicação com que tratou o Spark.”</p>
+                    </div>
+                    <div class="slider ">
+                        <img src="./img/avaliacao/cachorroPet6.jpeg" alt="Cliente 6" class="clll">
+                        <h3>Rosane Rosa</h3>
+                        <p>“Dra. Maristela é uma excelente profissional, atenciosa e cuidadosa com nosso pet. Lugar
+                            muito
+                            limpo, aconchegante e preço justo.”</p>
+                    </div>
+                </div>
+                <button id="next">
+                    <img src="./img/avaliacao/Pata-direcionadora.svg" alt="next" class="cll">
+                </button>
+            </div>
+    </div>
     </section>
+    </div>
     <aside id="contato">
         <div>
             <div class="contatoqua">
                 <h2>Dra. Maristela: <br>Cuidado e Carinho para Quem Você Ama.</h2>
                 <p>Sua clínica veterinária de confiança em Porto Alegre.</p>
-                <a href="./html/login.html">
+                <a href="./html/Agendar.html">
                     <button>agende sua consulta</button>
                 </a>
             </div>
@@ -276,42 +297,60 @@
         </div>
     </aside>
     <footer class="rodape">
-        <div class="minimapa">
-            <p>Endereço:</p>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.5474328049095!2d-51.18897342540184!3d-30.04983903152492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951978196c3ffc43%3A0x1c479e252a9190ec!2sR.%20Bar%C3%A3o%20do%20Amazonas%2C%20668%20-%20Jardim%20Bot%C3%A2nico%2C%20Porto%20Alegre%20-%20RS%2C%2090670-000!5e0!3m2!1spt-BR!2sbr!4v1763381401599!5m2!1spt-BR!2sbr"
-                width="350" height="150" style="border:solid 2px black; " allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+        <div class="container-footer">
+            <div class="col-footer sobre-footer">
+                <div class="logo-footer">
+                    <img src="./img/cabecalho/Logo-icon.png" alt="Logo">
+                    <span>Veterinária Maristela</span>
+                </div>
+                <p>Cuidado, carinho e profissionalismo para quem você mais ama. Sua clínica de confiança em Porto
+                    Alegre.</p>
+
+                <div class="redesocial">
+                    <a href="https://w.app/dramaristelaarmiliato" target="_blank" class="whats">
+                        <img src="./img/rodape/whatsapp.svg" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.instagram.com/maristelaveterinaria/" target="_blank" class="insta">
+                        <img src="./img/rodape/instagramsvg.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/p/Veterin%C3%A1ria-Maristela-100063809260468/?locale=pt_BR"
+                        target="_blank" class="face">
+                        <img src="./img/rodape/facebooksvg.svg" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-footer nav-footer">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="#entrada">Home</a></li>
+                    <li><a href="#servicos">Nossos Serviços</a></li>
+                    <li><a href="#sobre">Sobre a Dra.</a></li>
+                    <li><a href="#avaliacao">Avaliações</a></li>
+                    <li><a href="./html/login.html">Área do Cliente</a></li>
+                </ul>
+            </div>
+
+            <div class="col-footer local-footer">
+                <h3>Onde Estamos</h3>
+                <div class="mapa-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.5474328049095!2d-51.18897342540184!3d-30.04983903152492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951978196c3ffc43%3A0x1c479e252a9190ec!2sR.%20Bar%C3%A3o%20do%20Amazonas%2C%20668%20-%20Jardim%20Bot%C3%A2nico%2C%20Porto%20Alegre%20-%20RS%2C%2090670-000!5e0!3m2!1spt-BR!2sbr!4v1763381401599!5m2!1spt-BR!2sbr"
+                        width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
         </div>
-        <div class="navrodape">
-            <h3>NAVEGAÇÃO RÁPIDA</h3>
-            <ul>
-                <li><a href="#entrada">Home</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#avaliacao">Avaliações</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#">login</a></li>
-            </ul>
-        </div>
-        <div class="redesocial">
-            <a href="https://w.app/dramaristelaarmiliato" data-social="whastapp" class="whats">
-                <img src="./img/rodape/whatsapp.svg" alt="linkwhatsapp">
-            </a>
-            <a href="https://www.instagram.com/maristelaveterinaria/" data-social="instagram" class="insta">
-                <img src="./img/rodape/instagramsvg.svg" alt="linkinstagram">
-            </a>
-            <a href="https://www.facebook.com/p/Veterin%C3%A1ria-Maristela-100063809260468/?locale=pt_BR"
-                data-social="facebook" class="face">
-                <img src="./img/rodape/facebooksvg.svg" alt="linkfacebook">
-            </a>
-        </div>
-        <div class="decolaweb">
-            <a href="#DecolaWeb">
-                <img src="./img/rodape/decolaweb.png" alt="Decola Web">
-            </a>
-            <p>Está pagina foi desenvolvida por Decola Web</p>
-            <p>© 2025 Decola Web. Todos os direitos reservados</p>
+
+        <div class="copyright-bar">
+            <p>© 2025 Veterinária Maristela Armiliato. Todos os direitos reservados. </p>
+            <div class="decolaweb">
+                <span> | Desenvolvido por:</span>
+                <a href="#DecolaWeb">
+                    <img src="./img/rodape/decolaweb.png" alt="Decola Web">
+                </a>
+            </div>
         </div>
     </footer>
     <script src="./js/veterinaria.js"></script>

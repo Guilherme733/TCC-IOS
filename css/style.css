@@ -43,6 +43,10 @@ body {
   background-color: #f9f9f9;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 p {
   color: var(--text-dark);
   line-height: 1.6;
@@ -62,17 +66,19 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  position: fixed;
 }
 
 /* Container geral do menu */
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 10px 5%;
   background-color: #ffffff;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 20px;
 }
 
 /* ======================= LOGO ======================= */
@@ -117,12 +123,6 @@ header {
   color: var(--primary-color);
   background-color: transparent;
   transform: translateY(-2px);
-}
-
-/* Ícone de perfil / Login */
-.login img {
-  width: 50px;
-  height: auto;
 }
 
 /* ======================= MAIN (HERO SECTION) ======================= */
@@ -210,9 +210,10 @@ main {
 }
 
 /* ======================= SERVIÇOS ======================= */
-.servicos{
+.servicos {
   height: 100vh;
 }
+
 #servicos {
   text-align: center;
   padding: 50px;
@@ -306,43 +307,49 @@ main {
 
 article {
   text-align: center;
-  padding: 80px 20px;
+  /* padding: 80px 20px; */
   background-color: #f4fbfc;
   margin: 0;
-  height: 90vh;
+}
 
+.sobreb {
+  height: 100vh;
 }
 
 .sobremov {
   font-size: 30px;
-  padding-bottom: 120px;
+
 }
 
 .divA {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-@keyframes float {
+@keyframes flutuante {
   0% {
-      transform: translateY(0px); 
+    transform: translateY(0px);
   }
+
   50% {
-    transform: translateY(-15px); 
+    transform: translateY(-15px);
   }
+
   100% {
-    transform: translateY(0px); 
+    transform: translateY(0px);
   }
 }
-.draimg {
-  max-width: 300px; 
+
+.imga {
+  max-width: 300px;
   height: auto;
-  position: relative; 
-  animation: float 4s ease-in-out infinite; 
+  position: relative;
+  animation: flutuante 3s ease-in-out infinite;
 }
+
 .sobre {
   display: flex;
   flex-direction: column;
@@ -350,9 +357,12 @@ article {
   justify-content: center;
   gap: 30px;
   max-width: 1100px;
-  margin: auto;
-
   height: 300px;
+}
+
+.sobre p {
+  text-align: justify;
+
 }
 
 .sobrea {
@@ -367,23 +377,37 @@ article {
   width: 350px;
   height: 400px;
 
-
 }
 
-.psobre {
-  border-radius: 2px;
-  margin: 0;
-  padding: 0;
-  box-shadow: #333;
-
-
+.estrelas,
+.coracoes {
+  width: 100px;
+  height: 100px;
+  animation: changeColor 1s infinite alternate ease-in-out;
 }
+
+@keyframes changeColor {
+  0% {
+    fill: #eb4492;
+    /* Rosa */
+  }
+
+  50% {
+    fill: #7C33FF;
+    /* Roxo */
+  }
+
+  100% {
+    fill: #d303d3;
+    /* Azul */
+  }
+}
+
 
 /* ======================= AVALIAÇÕES ======================= */
 #avaliacoes {
   margin: 0;
   padding: 0;
-
 
 }
 
@@ -393,7 +417,7 @@ article {
   min-height: 90vh;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  margin-top: 100px;
 
 }
 
@@ -567,73 +591,197 @@ article {
 
 /* ======================= RODAPÉ ======================= */
 
-footer {
-  background: rgba(128, 128, 128, 0.404);
+/* ======================= RODAPÉ NOVO ======================= */
+
+footer.rodape {
+  background-color: var(--cor-1);
+  /* Fundo Vinho/Marsala elegante */
+  color: #fff;
+  padding-top: 60px;
+  font-family: "Nunito", sans-serif;
+  display: block;
+  /* Reseta o flex antigo que estava quebrando */
+}
+
+/* Container que segura as 3 colunas */
+.container-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  /* Colunas proporcionais */
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos Gerais das Colunas */
+.col-footer h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  /* Título em Azul Claro para destaque */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.col-footer p {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Coluna 1: Identidade */
+.logo-footer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
   align-items: center;
-  padding: 50px 20px;
-  color: black;
-  gap: 30px;
-}
-footer p{
-  color: black;
-}
-.navrodape ul {
-  padding: 0;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.navrodape li {
-  list-style: none;
-  margin-bottom: 10px;
+.logo-footer img {
+  width: 45px;
+  filter: brightness(0) invert(1);
+  /* Deixa a logo branca */
 }
 
-.navrodape a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  transition: 0.2s;
+.logo-footer span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
 }
 
-.navrodape a:hover {
-  color: var(--primary-color);
-  text-decoration:none;
-
-}
-
+/* Redes Sociais */
 .redesocial {
   display: flex;
   gap: 15px;
+  margin-top: 20px;
+}
+
+.redesocial a {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .redesocial img {
-  width: 32px;
-  cursor: pointer;
-  transition: transform 0.2s;
+  width: 20px;
   filter: brightness(0) invert(1);
+  /* Ícones brancos */
+  transition: transform 0.3s;
 }
 
-.whats {
-  filter: invert(72%) sepia(50%) saturate(1600%) hue-rotate(120deg) brightness(150%) contrast(92%);
+.redesocial a:hover {
+  background-color: var(--primary-color);
+  /* Fundo rosa no hover */
+  transform: translateY(-3px);
 }
 
-.insta {
-  filter: invert(72%) sepia(50%) saturate(1600%) hue-rotate(275deg) brightness(150%) contrast(92%)  ;
-  
+/* Coluna 2: Links */
+.nav-footer ul {
+  list-style: none;
+  padding: 0;
 }
 
-.face {
-  filter: invert(72%) sepia(50%) saturate(1600%) hue-rotate(220deg) brightness(150%) contrast(92%);
+.nav-footer li {
+  margin-bottom: 12px;
 }
 
-.redesocial img:hover {
-  transform: scale(1.2);
+.nav-footer a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.nav-footer a:hover {
+  color: var(--secondary-color);
+  /* Azul no hover */
+  padding-left: 5px;
+  /* Efeito de mover para o lado */
+}
+
+/* Coluna 3: Mapa */
+.mapa-container {
+  overflow: hidden;
+  border-radius: 15px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Barra de Copyright (Final) */
+.copyright-bar {
+  background-color: #5c3540;
+  /* Um tom um pouco mais escuro que a cor-1 */
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.copyright-bar p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
+
+}
+
+.decolaweb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.decolaweb span {
+  font-size: 0.8rem;
+  color: #ccc;
 }
 
 .decolaweb img {
-  width: 150px;
-  object-fit: contain;
-  opacity: 0.8;
+  width: 100px;
+  filter: brightness(0) invert(1);
+  /* Logo da dev branca */
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.decolaweb img:hover {
+  opacity: 1;
+}
+
+/* Responsividade do Footer */
+@media (max-width: 900px) {
+  .container-footer {
+    grid-template-columns: 1fr;
+    /* Tudo em uma coluna no celular */
+    text-align: center;
+  }
+
+  .logo-footer,
+  .redesocial,
+  .decolaweb {
+    justify-content: center;
+  }
+
+  .copyright-bar {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /* ======================= ÍCONES DOS SERVIÇOS ======================= */
@@ -685,32 +833,7 @@ footer p{
   text-align: center;
 }
 
-@media screen and (max-width: 1020px) {
-
-  /* Mostra o hambúrguer
-  .burger {
-    display: block;
-  }
-
-  /* Menu vira coluna 
-  .junto {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #f4fbfc;
-    width: 200px;
-    flex-direction: column;
-    padding: 20px 10px;
-    gap: 15px;
-
-    Esconde o menu por padrão 
-    display: nonee;
-  }
-
-  /* Quando o checkbox estiver marcado → mostra o menu 
-  #menu-toggle:checked+.burger+.menu {
-    display: flex;
-  } */
+@media screen and (max-width: 764px) {
 
   img.cll,
   img.clll {
@@ -733,31 +856,33 @@ footer p{
     grid-column: column;
   }
 
-  .gatoimg, .dogimg  {
+  .gatoimg,
+  .dogimg {
     display: none;
   }
 
 }
+
 #menuuu {
-    display: none;
+  display: none;
 }
 
 /* 2. Esconde o ícone do hambúrguer no Desktop */
 .burger {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--primary-color);
-    padding: 5px;
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--primary-color);
+  padding: 5px;
 }
 
 /* 3. Garante o estilo Desktop padrão */
 .ancora ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -765,58 +890,184 @@ footer p{
 @media (max-width: 768px) {
   @keyframes descerMenu {
     from {
-        opacity: 0;
-        transform: translateY(-10px);
+      opacity: 0;
+      transform: translateY(-10px);
     }
+
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
+
+  /* Mostra o ícone ☰ no celular */
+  .burger {
+    display: block;
+  }
+
+  /* Esconde o menu original e prepara a posição */
+  .ancora ul {
+    display: none;
+    /* Esconde a lista inicialmente */
+    flex-direction: column;
+    /* Um item abaixo do outro */
+    position: absolute;
+    /* Sai do fluxo normal */
+    top: 100%;
+    /* Cola logo abaixo do cabeçalho */
+    left: 0;
+    width: 100%;
+    /* Largura total da tela */
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    /* Garante que fique na frente de TUDO */
+    border-top: 1px solid #eee;
+  }
+
+  /* Estilo dos links no mobile */
+  .ancora ul li {
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  .ancora ul li a {
+    display: block;
+    padding: 10px;
+    font-size: 1.2em;
+  }
+
+  /* === A LÓGICA DE ABRIR === */
+  /* Quando o checkbox estiver marcado, forçamos o display flex na lista */
+  #menuuu:checked~ul {
+    display: flex !important;
+    /* !important garante que vai abrir */
+    animation: descer 0.3s ease-in-out;
+  }
+
+  /* Efeito no ícone (opcional) */
+  #menuuu:checked~.burger {
+
+    transition: 0.3s;
+  }
 }
 
-    /* Mostra o ícone ☰ no celular */
-    .burger {
-        display: block;
-    }
+header {}
 
-    /* Esconde o menu original e prepara a posição */
-    .ancora ul {
-        display: none; /* Esconde a lista inicialmente */
-        flex-direction: column; /* Um item abaixo do outro */
-        position: absolute; /* Sai do fluxo normal */
-        top: 100%; /* Cola logo abaixo do cabeçalho */
-        left: 0;
-        width: 100%; /* Largura total da tela */
-        background-color: #ffffff;
-        text-align: center;
-        padding: 20px 0;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        z-index: 9999; /* Garante que fique na frente de TUDO */
-        border-top: 1px solid #eee;
-    }
+.menu {
+  justify-content: space-between;
+  gap: 10px;
+}
 
-    /* Estilo dos links no mobile */
-    .ancora ul li {
-        margin: 15px 0;
-        width: 100%;
-    }
-    
-    .ancora ul li a {
-        display: block;
-        padding: 10px;
-        font-size: 1.2em;
-    }
+/* ======================= BOTÃO NO HEADER ======================= */
 
-    /* === A LÓGICA DE ABRIR === */
-    /* Quando o checkbox estiver marcado, forçamos o display flex na lista */
-    #menuuu:checked ~ ul {
-        display: flex !important; /* !important garante que vai abrir */
-        animation: descer 0.3s ease-in-out;
-    }
+/* Ajuste do container para alinhar certinho */
+.area-agendamento {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
 
-    /* Efeito no ícone (opcional) */
-    #menuuu:checked ~ .burger {
-  
-        transition: 0.3s;
-    }
+/* Estilo do botão igual ao da Hero, mas tamanho ajustado para o menu */
+.btn-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 25px;
+  /* Altura e largura automáticas baseadas no texto */
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(242, 41, 135, 0.4);
+  /* Sombra suave rosa */
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  /* Garante que o texto não quebre linha */
+  font-family: "Nunito", sans-serif;
+}
+
+/* Efeito Hover (passar o mouse) */
+.btn-header:hover {
+  background-color: #d9048e;
+  /* Tom mais escuro igual ao original */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(242, 41, 135, 0.6);
+}
+
+@media (max-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+}
+
+/* Ajuste para telas menores (Mobile) */
+@media (max-width: 768px) {
+  .btn-header {
+    padding: 8px 15px;
+    font-size: 0.80rem;
+  }
+
+  .menu {
+    height: 60px;
+    width: 400px;
+    padding: 1px;
+    justify-content: flex-end;
+  }
+
+  .dialogomain h1 {
+    font-size: 2.5em;
+    width: auto;
+  }
+
+  .he {
+    text-align: start;
+  }
+
+  .logo {
+    justify-content: flex-start;
+  }
+
+}
+
+/* Ajuste para telas menores (Mobile) */
+@media (max-width: 768px) {
+  .btn-header {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .menu {
+    height: 70px;
+    padding: 1px;
+    justify-content: space-between;
+  }
+
+  .dialogomain h1 {
+    font-size: 2.5em;
+    width: auto;
+  }
+
+  h1 {
+    width: 400px;
+  }
+
+  .he {
+    text-align: start;
+  }
+}
+
+/* SOBRE */
+@media (max-width: 768px) {
+  .divA {
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .estrelas,
+  .coracoes {
+    display: none;
+  }
 }
