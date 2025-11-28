@@ -1,8 +1,8 @@
  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
  * {
-     margin: 0;
-     padding: 0;
+     margin: 2;
+     padding: 10;
      box-sizing: border-box;
      font-family: 'Nunito', sans-serif;
  }
@@ -28,20 +28,35 @@
      gap: 2rem;
  }
 
- @media (min-width: 768px) {
-     .agendar {
-         flex-direction: row;
-         gap: 4rem;
+
+ @keyframes flutuante {
+     0% {
+         transform: translateY(0px);
+     }
+
+     50% {
+         transform: translateY(-15px);
+     }
+
+     100% {
+         transform: translateY(0px);
      }
  }
 
+ .draimg {
+     max-width: 300px;
+     height: auto;
+     position: relative;
+     animation: flutuante 3s ease-in-out infinite;
+
+ }
 
  .img {
      display: flex;
      justify-content: center;
      align-items: center;
      flex: 1;
-     gap: 60px;
+     gap: 60px 20px;
      flex-direction: column;
  }
 
@@ -68,26 +83,15 @@
 
  .horario span {
      font-weight: 800;
-     color: #d9048e;
+     color: #000000;
      font-size: 1.25rem;
      margin-bottom: 0.5rem;
  }
 
- @keyframes pulse {
-     0% {
-         box-shadow: 0 0 0 0 rgba(242, 41, 135, 0.4);
-     }
 
-     70% {
-         box-shadow: 0 0 0 15px rgba(242, 41, 135, 0);
-     }
-
-     100% {
-         box-shadow: 0 0 0 0 rgba(242, 41, 135, 0);
-     }
- }
 
  .imga {
+     gap: 5px;
      height: 70%;
      width: 70%;
      object-fit: contain;
@@ -169,4 +173,101 @@
      background-color: #d9048e;
      transform: translateY(-3px);
      box-shadow: 0 6px 20px rgba(242, 41, 135, 0.6);
+ }
+
+ @keyframes gradient-animation {
+     0% {
+         background-position: 0% 25%;
+     }
+
+     25% {
+         background-position: 25% 50%;
+     }
+
+     50% {
+         background-position: 75% 100%;
+     }
+
+     75% {
+         background-position: 50% 25%;
+     }
+
+     100% {
+         background-position: 25% 0%;
+     }
+ }
+
+
+ .phorario p {
+     font-size: 1.5rem;
+     font-weight: 800;
+     cursor: pointer;
+     background: linear-gradient(90deg, #d9048e, #f22987, #85def2, #d9048e);
+     background-size: 300% 100%;
+     -webkit-background-clip: text;
+     background-clip: text;
+     color: transparent;
+     animation: gradient-animation 7s ease infinite;
+ }
+
+ @media (min-width: 768px) {
+     .agendar {
+         flex-direction: row;
+         gap: 4rem;
+     }
+ }
+
+
+ .depois {
+     /* Novo ID #depois e classe .depois */
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.6);
+     display: none;
+     /* Escondido por padrão */
+     justify-content: center;
+     align-items: center;
+     z-index: 2000;
+     opacity: 0;
+     transition: opacity 0.3s ease-out;
+ }
+
+ .depois.show {
+     display: flex;
+     opacity: 1;
+ }
+
+ .depois.show .mensagem {
+     transform: scale(1);
+ }
+
+ .mensagem h3 {
+     color: #28a745;
+     /* Verde de sucesso */
+     font-size: 1.8rem;
+     margin-bottom: 10px;
+ }
+
+ .mensagem p {
+     color: #555;
+     font-size: 1.1em;
+     margin-bottom: 25px;
+ }
+
+ .mensagem button {
+     background-color: #d9048e;
+     color: white;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     font-weight: 700;
+     transition: background-color 0.3s;
+ }
+
+ .mensagem button:hover {
+     background-color: #c0037e;
  }

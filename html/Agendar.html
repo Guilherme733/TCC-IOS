@@ -12,11 +12,15 @@
 <body>
     <section class="agendar">
         <div class="img">
-            <img src="../img/agendar/Dra. Maristela SemFundo..png" alt="" class="imga">
+            <img src="../img/agendar/Dra. Maristela SemFundo..png" alt="" class="draimg">
             <div class="horario">
-                <p>Segunda à Sexta</p>
+                <div class="phorario">
+                    <p>Segunda à Sexta</p>
+                </div>
                 <span>08:30 às 18:30</span>
-                <p>Sábado</p>
+                <div class="phorario">
+                    <p>Sábado</p>
+                </div>
                 <span>09:00 às 15:00</span>
             </div>
         </div>
@@ -26,28 +30,38 @@
             </div>
             <div class="preenchimento">
                 <label for="Nome do Tutor">Nome do Tutor</label>
-                <input type="Nome do tutor">
+                <input type="Nome do tutor" id="nometutor" name="Nome do Tutor">
 
                 <label for="Nome do Pet">Nome do Pet</label>
-                <input type="Nome do Pet">
+                <input type="Nome do Pet" id="nomepet" name="nomepet">
 
                 <label for="Telefone para contato">Telefone para contato</label>
-                <input type="Telefone para contato">
+                <input type="Telefone para contato" id="telefone" name="telefone">
 
                 <label for="Email">E-mail</label>
-                <input type="Email">
+                <input type="Email" id="email" name="email">
 
                 <label for="Data">Data</label>
-                <input type="date">
+                <input type="date" id="data" name="data">
 
                 <label for="Hora">Hora</label>
-                <input type="time">
+                <input type="time" id="hora" name="hora">
 
                 <button type="submit">Enviar Agendamento</button>
             </div>
 
         </div>
+        <div id="depois" class="depois">
+            <div class="mensagem">
+                <h3>Sucesso!</h3>
+                <p>Seu agendamento foi enviado com sucesso. Aguarde nosso contato para confirmação.</p>
+                <a href="../index.html">
+                    <button id="fechar">Fechar</button>
+                </a>
+            </div>
+        </div>
     </section>
+    <script src="../js/agendar.js"></script>
 </body>
 
 

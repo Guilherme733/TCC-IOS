@@ -36,3 +36,15 @@ btnNext.addEventListener('click', nextSlider);
 btnPrev.addEventListener('click', prevSlider);
 
 
+      document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuuu');
+            const navLinks = document.querySelectorAll('.junto .botaonav');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menuToggle.checked) {
+                        menuToggle.checked = false;
+                    }
+                });
+            });
+        });

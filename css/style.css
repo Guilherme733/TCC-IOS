@@ -22,7 +22,7 @@
   --text-light: #ffffff;
 
   /* Sombra padrão */
-  --shadow-subtle: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-subtle: 0 4px 10px rgba(0, 0, 0, 0.541);
   --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -67,6 +67,9 @@ header {
   top: 0;
   z-index: 1000;
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Container geral do menu */
@@ -343,11 +346,12 @@ article {
   }
 }
 
-.imga {
+.draimg {
   max-width: 300px;
   height: auto;
   position: relative;
   animation: flutuante 3s ease-in-out infinite;
+
 }
 
 .sobre {
@@ -523,10 +527,12 @@ article {
   border-radius: 14px;
   box-shadow: var(--shadow-subtle);
   border: 1px solid #eee;
+   gap: 15px;
 }
 
 .contatoqua {
   grid-area: contatoqua;
+ 
 }
 
 .horario {
@@ -540,19 +546,24 @@ article {
 }
 
 .contatoqua button {
+  height: 55px;
+  width: 250px;
+  border-radius: 50px;
   background-color: var(--primary-color);
-  color: white;
-  padding: 15px 35px;
-  border-radius: 8px;
   cursor: pointer;
   border: none;
+  color: white;
+  font-size: 1.1em;
   font-weight: bold;
-  margin-top: 15px;
+  box-shadow: 0 4px 15px rgba(242, 41, 135, 0.4);
   transition: 0.3s ease;
+  
 }
 
 .contatoqua button:hover {
-  background-color: var(--cor-1);
+  background-color: #d9048e;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(242, 41, 135, 0.6);
 }
 
 .especialista ul {
@@ -589,7 +600,40 @@ article {
   }
 }
 
-/* ======================= RODAPÉ ======================= */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 25%;
+  }
+
+  25% {
+    background-position: 25% 50%;
+  }
+
+  50% {
+    background-position: 75% 100%;
+  }
+
+  75% {
+    background-position: 50% 25%;
+  }
+
+  100% {
+    background-position: 25% 0%;
+  }
+}
+
+
+.phorario {
+  font-size: 1.5rem;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(90deg, #d9048e, #f22987, #85def2, #d9048e);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-animation 7s ease infinite;
+}
 
 /* ======================= RODAPÉ NOVO ======================= */
 
@@ -992,7 +1036,7 @@ header {}
 /* Efeito Hover (passar o mouse) */
 .btn-header:hover {
   background-color: #d9048e;
-  /* Tom mais escuro igual ao original */
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(242, 41, 135, 0.6);
 }
@@ -1008,6 +1052,17 @@ header {}
   .btn-header {
     padding: 8px 15px;
     font-size: 0.80rem;
+    order: 3;
+    margin-right: 15px;
+  }
+
+  .botaoconsulta {
+    margin-left: 40px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 12px;
   }
 
   .menu {
@@ -1037,6 +1092,7 @@ header {}
   .btn-header {
     padding: 8px 15px;
     font-size: 0.85rem;
+    margin-left: 12.7px;
   }
 
   .menu {
@@ -1069,5 +1125,16 @@ header {}
   .estrelas,
   .coracoes {
     display: none;
+  }
+}
+
+/* SOBRE */
+@media (max-width: 768px) {
+  .contatoqua {
+    text-align: center;
+  }
+
+  .psobre {
+    margin: 20px
   }
 }
