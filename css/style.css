@@ -52,10 +52,7 @@ p {
   line-height: 1.6;
 }
 
-.wave1 {
-  margin: 0;
-  padding: 0;
-}
+
 
 /* ======================= CABEÇALHO / HEADER ======================= */
 
@@ -120,12 +117,55 @@ header {
   border: none;
   transition: 0.3s;
   font-size: 1.05em;
+
 }
 
 .botaonav:hover {
   color: var(--primary-color);
   background-color: transparent;
   transform: translateY(-2px);
+
+}
+
+.burger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--primary-color);
+  padding: 5px;
+}
+
+
+/* ======================= BOTÃO NO HEADER ======================= */
+
+
+.area-agendamento {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+
+.btn-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(242, 41, 135, 0.4);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: "Nunito", sans-serif;
+}
+
+.btn-header:hover {
+  background-color: #d9048e;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(242, 41, 135, 0.6);
 }
 
 /* ======================= MAIN (HERO SECTION) ======================= */
@@ -138,7 +178,7 @@ main {
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 98vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   padding-left: 10%;
@@ -213,9 +253,6 @@ main {
 }
 
 /* ======================= SERVIÇOS ======================= */
-.servicos {
-  height: 100vh;
-}
 
 #servicos {
   text-align: center;
@@ -253,8 +290,6 @@ main {
   height: 100%;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
-
-  /* SOMBRA NOVA: Mais espalhada e visível */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30);
   border-radius: 15px;
 }
@@ -279,8 +314,6 @@ main {
 
 .cartao-frente {
   background-color: #ffffff;
-
-  /* MUDANÇA: Usei sua cor-5 (#85def2) que aparece mais que a cor-6 */
   border: 2px solid var(--cor-5);
   color: #333;
 }
@@ -306,22 +339,50 @@ main {
   color: white;
 }
 
+/* ======================= ÍCONES DOS SERVIÇOS ======================= */
+
+.icone-servico {
+  width: 65px;
+  height: 65px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  /* PINTA O ÍCONE PRETO DE ROSA */
+  filter: invert(28%) sepia(93%) saturate(3066%) hue-rotate(313deg) brightness(91%) contrast(98%);
+}
+
+.cartao:hover .icone-servico {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.cartao-frente h3 {
+  margin-bottom: 8px;
+  color: var(--cor-1);
+  font-size: 1.4em;
+}
+
+/* ======================= CORREÇÃO ESPECÍFICA ======================= */
+/* Aumenta o ícone de castração (que visualmente parece menor) */
+
+.icone-grande {
+  width: 95px !important;
+  height: 95px !important;
+  margin-bottom: 5px;
+
+}
+
 /* ======================= SOBRE NÓS ======================= */
 
 article {
   text-align: center;
-  /* padding: 80px 20px; */
   background-color: #f4fbfc;
   margin: 0;
+  padding: 0;
 }
 
-.sobreb {
-  height: 100vh;
-}
 
 .sobremov {
   font-size: 30px;
-
+  margin-bottom: 50px;
 }
 
 .divA {
@@ -361,7 +422,8 @@ article {
   justify-content: center;
   gap: 30px;
   max-width: 1100px;
-  height: 300px;
+  height: auto;
+  margin-bottom: 30px ;
 }
 
 .sobre p {
@@ -393,32 +455,33 @@ article {
 @keyframes changeColor {
   0% {
     fill: #eb4492;
-    /* Rosa */
   }
 
   50% {
     fill: #7C33FF;
-    /* Roxo */
   }
 
   100% {
     fill: #d303d3;
-    /* Azul */
   }
 }
 
 
 /* ======================= AVALIAÇÕES ======================= */
-#avaliacoes {
-  margin: 0;
-  padding: 0;
+
+
+.depoimentos{
+  background-image: url(../img/contatos/caes.jpg);
+  background-size:100% 135%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -100px;
 
 }
-
 .container-slider {
   display: flex;
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
   margin-top: 100px;
@@ -503,9 +566,13 @@ article {
 
 /* ======================= CONTATO ======================= */
 
+
 #contato {
   padding: 60px 20px;
   background-color: #fff;
+
+
+
 }
 
 #contato>div {
@@ -527,12 +594,16 @@ article {
   border-radius: 14px;
   box-shadow: var(--shadow-subtle);
   border: 1px solid #eee;
-   gap: 15px;
+  gap: 15px;
 }
 
 .contatoqua {
   grid-area: contatoqua;
- 
+  background-image: url(../img/contatos/gato\ na\ caixa\ de\ papelão.png);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 350px;
+
 }
 
 .horario {
@@ -543,6 +614,10 @@ article {
 .especialista {
   grid-area: especialista;
   text-align: center;
+  background-image: url(..//img/pets/cãoolhando.png);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 250px;
 }
 
 .contatoqua button {
@@ -557,7 +632,7 @@ article {
   font-weight: bold;
   box-shadow: 0 4px 15px rgba(242, 41, 135, 0.4);
   transition: 0.3s ease;
-  
+
 }
 
 .contatoqua button:hover {
@@ -639,34 +714,28 @@ article {
 
 footer.rodape {
   background-color: var(--cor-1);
-  /* Fundo Vinho/Marsala elegante */
   color: #fff;
   padding-top: 60px;
   font-family: "Nunito", sans-serif;
   display: block;
-  /* Reseta o flex antigo que estava quebrando */
 }
 
-/* Container que segura as 3 colunas */
 .container-footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr 1fr;
-  /* Colunas proporcionais */
   gap: 40px;
   padding-bottom: 50px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Estilos Gerais das Colunas */
 .col-footer h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   margin-bottom: 20px;
   color: var(--secondary-color);
-  /* Título em Azul Claro para destaque */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -679,7 +748,6 @@ footer.rodape {
   margin-bottom: 20px;
 }
 
-/* Coluna 1: Identidade */
 .logo-footer {
   display: flex;
   align-items: center;
@@ -690,7 +758,6 @@ footer.rodape {
 .logo-footer img {
   width: 45px;
   filter: brightness(0) invert(1);
-  /* Deixa a logo branca */
 }
 
 .logo-footer span {
@@ -700,7 +767,7 @@ footer.rodape {
   color: #fff;
 }
 
-/* Redes Sociais */
+
 .redesocial {
   display: flex;
   gap: 15px;
@@ -721,17 +788,14 @@ footer.rodape {
 .redesocial img {
   width: 20px;
   filter: brightness(0) invert(1);
-  /* Ícones brancos */
   transition: transform 0.3s;
 }
 
 .redesocial a:hover {
   background-color: var(--primary-color);
-  /* Fundo rosa no hover */
   transform: translateY(-3px);
 }
 
-/* Coluna 2: Links */
 .nav-footer ul {
   list-style: none;
   padding: 0;
@@ -750,12 +814,9 @@ footer.rodape {
 
 .nav-footer a:hover {
   color: var(--secondary-color);
-  /* Azul no hover */
   padding-left: 5px;
-  /* Efeito de mover para o lado */
 }
 
-/* Coluna 3: Mapa */
 .mapa-container {
   overflow: hidden;
   border-radius: 15px;
@@ -763,10 +824,8 @@ footer.rodape {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Barra de Copyright (Final) */
 .copyright-bar {
   background-color: #5c3540;
-  /* Um tom um pouco mais escuro que a cor-1 */
   padding: 20px;
   text-align: center;
   display: flex;
@@ -799,7 +858,6 @@ footer.rodape {
 .decolaweb img {
   width: 100px;
   filter: brightness(0) invert(1);
-  /* Logo da dev branca */
   opacity: 0.7;
   transition: 0.3s;
 }
@@ -808,7 +866,241 @@ footer.rodape {
   opacity: 1;
 }
 
-/* Responsividade do Footer */
+
+/* ========================== HAMBURGUER RESPONSIVIDADE ========================== */
+
+
+.burger {
+  display: none;
+  font-size: 26px;
+  color: var(--primary-color);
+  cursor: pointer;
+
+}
+
+
+#menuuu {
+  display: none;
+}
+
+.ancora ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ======================= CABEÇALHO RESPONSIVO ======================= */
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-header {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    margin-left: 12.7px;
+    order: 3;
+  }
+
+  .botaoconsulta {
+    margin-left: 40px;
+  }
+
+  h1 {
+    width: 400px;
+  }
+
+  .logo {
+    justify-content: flex-start;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  @keyframes descerMenu {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  .burger {
+    display: block;
+    justify-items: start;
+  }
+
+
+  .ancora ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    border-top: 1px solid #eee;
+  }
+
+  .ancora ul li {
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  .ancora ul li a {
+    display: block;
+    padding: 10px;
+    font-size: 1.2em;
+  }
+
+
+  /* === A LÓGICA DE ABRIR === */
+  #menuuu:checked~ul {
+    display: flex !important;
+    animation: descer 0.3s ease-in-out;
+  }
+
+  #menuuu:checked~.burger {
+    transition: 0.7s;
+  }
+}
+
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px 20px;
+
+}
+
+
+
+/* ======================= MAIN RESPONSIVO ======================= */
+
+@media (max-width: 768px) {
+  .menu {
+    height: 70px;
+    padding: 1px;
+    justify-content: space-between;
+    /* height: 60px;
+    width: 400px;
+    padding: 1px;
+    justify-content: flex-end; */
+  }
+
+  .dialogomain h1 {
+    font-size: 2.5em;
+    width: auto;
+  }
+
+
+}
+
+/* ======================= SERVIÇOS RESPONSIVO ==================== */
+@media (max-width: 768px) {
+  .he {
+    text-align: start;
+  }
+
+
+}
+
+
+/* ======================= SOBRE RESPONSIVO ======================= */
+
+@media (max-width: 768px) {
+  .divA {
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .estrelas,
+  .coracoes {
+    display: none;
+  }
+
+  .psobre {
+    margin: 20px;
+    text-align:center;
+    font-size: 22px;
+  }
+
+  .sobre{
+    height: auto;
+  }
+  .sobremov {
+  font-size: 30px;
+  margin-bottom: -60px;
+}
+}
+
+/* ======================= CONTATO RESPONSIVO ======================= */
+@media (max-width: 768px) {
+  .contatoqua {
+    text-align: center;
+    height: 450px;
+  }
+
+
+  /* ======================= AVALIAÇÕES RESPONSIVO ======================= */
+
+  @media screen and (max-width: 764px) {
+   
+    .depoimentos{
+  background-image: url(../img/contatos/caes.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+    img.cll,
+    img.clll {
+      width: 40px;
+      height: 40px;
+    }
+
+    div.container-imagen {
+      width: 370px;
+      height: 370px;
+    }
+
+    img.clll {
+      width: 90px;
+      height: 90px;
+    }
+
+    .rodape {
+      display: grid;
+      grid-column: column;
+    }
+
+    .gatoimg,
+    .dogimg {
+      display: none;
+    }
+
+  }
+
+  /* ======================= RODAPE RESPONSIVO ======================= */
+
+
+}
+
 @media (max-width: 900px) {
   .container-footer {
     grid-template-columns: 1fr;
@@ -828,313 +1120,4 @@ footer.rodape {
   }
 }
 
-/* ======================= ÍCONES DOS SERVIÇOS ======================= */
 
-.icone-servico {
-  width: 65px;
-  /* Tamanho padrão */
-  height: 65px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-
-  /* PINTA O ÍCONE PRETO DE ROSA */
-  filter: invert(28%) sepia(93%) saturate(3066%) hue-rotate(313deg) brightness(91%) contrast(98%);
-}
-
-.cartao:hover .icone-servico {
-  transform: scale(1.15) rotate(5deg);
-}
-
-.cartao-frente h3 {
-  margin-bottom: 8px;
-  color: var(--cor-1);
-  font-size: 1.4em;
-}
-
-/* ======================= CORREÇÃO ESPECÍFICA ======================= */
-/* Aumenta o ícone de castração (que visualmente parece menor) */
-
-.icone-grande {
-  width: 95px !important;
-  height: 95px !important;
-  margin-bottom: 5px;
-  /* Ajuste para manter o alinhamento do texto */
-}
-
-/* ========================== RESPONSIVIDADE ========================== */
-
-/* Esconde o checkbox */
-#menuuu {
-  display: none;
-}
-
-/* Ícone hambúrguer (mobile) */
-.burger {
-  display: none;
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
-  text-align: center;
-}
-
-@media screen and (max-width: 764px) {
-
-  img.cll,
-  img.clll {
-    width: 40px;
-    height: 40px;
-  }
-
-  div.container-imagen {
-    width: 370px;
-    height: 370px;
-  }
-
-  img.clll {
-    width: 90px;
-    height: 90px;
-  }
-
-  .rodape {
-    display: grid;
-    grid-column: column;
-  }
-
-  .gatoimg,
-  .dogimg {
-    display: none;
-  }
-
-}
-
-#menuuu {
-  display: none;
-}
-
-/* 2. Esconde o ícone do hambúrguer no Desktop */
-.burger {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: var(--primary-color);
-  padding: 5px;
-}
-
-/* 3. Garante o estilo Desktop padrão */
-.ancora ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-
-
-@media (max-width: 768px) {
-  @keyframes descerMenu {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Mostra o ícone ☰ no celular */
-  .burger {
-    display: block;
-  }
-
-  /* Esconde o menu original e prepara a posição */
-  .ancora ul {
-    display: none;
-    /* Esconde a lista inicialmente */
-    flex-direction: column;
-    /* Um item abaixo do outro */
-    position: absolute;
-    /* Sai do fluxo normal */
-    top: 100%;
-    /* Cola logo abaixo do cabeçalho */
-    left: 0;
-    width: 100%;
-    /* Largura total da tela */
-    background-color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
-    /* Garante que fique na frente de TUDO */
-    border-top: 1px solid #eee;
-  }
-
-  /* Estilo dos links no mobile */
-  .ancora ul li {
-    margin: 15px 0;
-    width: 100%;
-  }
-
-  .ancora ul li a {
-    display: block;
-    padding: 10px;
-    font-size: 1.2em;
-  }
-
-  /* === A LÓGICA DE ABRIR === */
-  /* Quando o checkbox estiver marcado, forçamos o display flex na lista */
-  #menuuu:checked~ul {
-    display: flex !important;
-    /* !important garante que vai abrir */
-    animation: descer 0.3s ease-in-out;
-  }
-
-  /* Efeito no ícone (opcional) */
-  #menuuu:checked~.burger {
-
-    transition: 0.3s;
-  }
-}
-
-header {}
-
-.menu {
-  justify-content: space-between;
-  gap: 10px;
-}
-
-/* ======================= BOTÃO NO HEADER ======================= */
-
-/* Ajuste do container para alinhar certinho */
-.area-agendamento {
-  display: flex;
-  align-items: center;
-  margin-left: 40px;
-}
-
-/* Estilo do botão igual ao da Hero, mas tamanho ajustado para o menu */
-.btn-header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 10px 25px;
-  /* Altura e largura automáticas baseadas no texto */
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(242, 41, 135, 0.4);
-  /* Sombra suave rosa */
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  /* Garante que o texto não quebre linha */
-  font-family: "Nunito", sans-serif;
-}
-
-/* Efeito Hover (passar o mouse) */
-.btn-header:hover {
-  background-color: #d9048e;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(242, 41, 135, 0.6);
-}
-
-@media (max-width: 768px) {
-  header {
-    justify-content: space-between;
-  }
-}
-
-/* Ajuste para telas menores (Mobile) */
-@media (max-width: 768px) {
-  .btn-header {
-    padding: 8px 15px;
-    font-size: 0.80rem;
-    order: 3;
-    margin-right: 15px;
-  }
-
-  .botaoconsulta {
-    margin-left: 40px;
-  }
-
-  .header {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .menu {
-    height: 60px;
-    width: 400px;
-    padding: 1px;
-    justify-content: flex-end;
-  }
-
-  .dialogomain h1 {
-    font-size: 2.5em;
-    width: auto;
-  }
-
-  .he {
-    text-align: start;
-  }
-
-  .logo {
-    justify-content: flex-start;
-  }
-
-}
-
-/* Ajuste para telas menores (Mobile) */
-@media (max-width: 768px) {
-  .btn-header {
-    padding: 8px 15px;
-    font-size: 0.85rem;
-    margin-left: 12.7px;
-  }
-
-  .menu {
-    height: 70px;
-    padding: 1px;
-    justify-content: space-between;
-  }
-
-  .dialogomain h1 {
-    font-size: 2.5em;
-    width: auto;
-  }
-
-  h1 {
-    width: 400px;
-  }
-
-  .he {
-    text-align: start;
-  }
-}
-
-/* SOBRE */
-@media (max-width: 768px) {
-  .divA {
-    flex-direction: column;
-    gap: 100px;
-  }
-
-  .estrelas,
-  .coracoes {
-    display: none;
-  }
-}
-
-/* SOBRE */
-@media (max-width: 768px) {
-  .contatoqua {
-    text-align: center;
-  }
-
-  .psobre {
-    margin: 20px
-  }
-}

@@ -48,3 +48,17 @@ btnPrev.addEventListener('click', prevSlider);
                 });
             });
         });
+
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+const itens = document.querySelectorAll("#menu .item");
+
+    hamburger.addEventListener("click", () => {
+        menu.classList.toggle("ativo");
+});
+
+    itens.forEach(item => {
+    item.addEventListener("click", () => {
+         menu.classList.remove("ativo");
+  });
+});
